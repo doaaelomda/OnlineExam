@@ -1,0 +1,34 @@
+<div class="grid grid-cols-12 gap-4">
+  <div class="col-span-6">
+    <app-slider></app-slider>
+  </div>
+
+  <div class="col-span-6 m-auto">
+    <p-tabView>
+      <p-tabPanel>
+        <ng-template pTemplate="header">
+          <div class="flex items-center gap-2">
+            <p-dropdown
+              [options]="languages"
+              [(ngModel)]="selectedLanguage"
+              optionLabel="label"
+              class="w-28"
+              (click)="$event.stopPropagation()"
+            ></p-dropdown>
+            <span class="tab-title">Sign in</span>
+          </div>
+        </ng-template>
+        <app-login-page></app-login-page>
+      </p-tabPanel>
+
+      <p-tabPanel>
+        <ng-template pTemplate="header">
+          <div class="flex items-center">
+            <span class="tab-title">Register</span>
+          </div>
+        </ng-template>
+        <app-register></app-register>
+      </p-tabPanel>
+    </p-tabView>
+  </div>
+</div>

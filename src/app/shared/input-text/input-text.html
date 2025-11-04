@@ -1,0 +1,18 @@
+<div class="form_group custom-input-card">
+  <input class="custom-input"
+         type="text"
+         [placeholder]="currentPlaceHolder"
+         pInputText
+         [formControl]="currentControl"
+         [ngClass]="{
+           'border-danger_color': currentControl.invalid && (currentControl.touched || currentControl.dirty),
+           'border-blue_color': currentControl.valid || !(currentControl.touched || currentControl.dirty)
+         }" />
+</div>
+  @if(currentControl && currentValidations.length){
+    @for(val of currentValidations; track val){
+      @if(currentControl.hasError(val.key) && (currentControl.touched || currentControl.dirty)){
+        <p class="error-box">{{ val.message }}</p>
+      }
+    }
+  }

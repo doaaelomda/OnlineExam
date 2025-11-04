@@ -1,0 +1,33 @@
+<section class="centered-form">
+  <p class="header_form">Sign In</p>
+
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="form-group py-8">
+      <app-input-text [controlNameInput]="'email'" [placeholder]="'Enter Email'" [control]="loginForm.get('email')!"
+        [Validation]="ValidationRequired"></app-input-text>
+    </div>
+
+    <div class="form-group mb-3">
+      <app-input-text [controlNameInput]="'password'" [placeholder]="'********'" [control]="loginForm.get('password')!"
+        [Validation]="ValidationRequired"></app-input-text>
+    </div>
+  </form>
+
+  <div class="mb-10 text-end">
+    <a class="hinit">Recover Password ?</a>
+  </div>
+  <app-button [title]="'Sign in'"></app-button>
+
+  <div class="center_border my-8 gap-3">
+    <div class="border"></div>
+    <p>Or Continue with</p>
+    <div class="border"></div>
+  </div>
+
+  <div class="center_border gap-3">
+    <img src="/images/Google.svg" alt="">
+    <img src="/images/Twitter.svg" alt="">
+    <img src="/images/Facebook.svg" alt="">
+    <img src="/images/Apple.svg" alt="">
+  </div>
+</section>

@@ -1,0 +1,42 @@
+.custom-input-card {
+  display: flex;
+  flex-direction: column;
+  border: 0.99px solid rgb(224, 224, 233);
+  border-radius: 10px;
+  background-color: rgb(249, 249, 249);
+  box-shadow: 0px 10px 20px 0px rgba(68, 97, 242, 0.05);
+  width: 410px;
+  height: 55px;
+}
+
+.custom-input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #333;
+  background-color: transparent;
+  padding: 0 10px;
+}
+
+.custom-input::placeholder {
+  color: rgb(161, 164, 169);
+  font-weight: 500;
+}
+
+.border-blue_color {
+  border: 1px solid #3b82f6;
+  border-radius: 10px;
+}
+
+.border-danger_color {
+  border: 1px solid red;
+  border-radius: 10px;
+}
+
+.error-box {
+  color: red;
+  font-size: 14px;
+  margin-top: 4px;
+}

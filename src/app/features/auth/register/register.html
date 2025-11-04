@@ -1,0 +1,49 @@
+<section>
+  <p class="header_form">Register</p>
+
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+     <div class="form-group my-6">
+      <app-input-text [controlNameInput]="'firstName'" [placeholder]="'First Name'" [control]="registerForm.get('firstName')!"
+        ></app-input-text>
+    </div>
+     <div class="form-group ">
+      <app-input-text [controlNameInput]="'lastName'" [placeholder]="'Last Name'" [control]="registerForm.get('lastName')!"
+        ></app-input-text>
+    </div>
+    <div class="form-group my-6">
+      <app-input-text [controlNameInput]="'email'" [placeholder]="'Enter Email'" [control]="registerForm.get('email')!"
+        ></app-input-text>
+    </div>
+
+
+    <div class="form-group">
+      <app-input-text [controlNameInput]="'password'" [placeholder]="'Password'" [control]="registerForm.get('password')!"
+        ></app-input-text>
+    </div>
+       <div class="form-group my-6">
+      <app-input-text [controlNameInput]="'confirmpassword'" [placeholder]="'Confirm Password'" [control]="registerForm.get('confirmpassword')!"
+        ></app-input-text>
+    </div>
+
+  </form>
+  <div class="mb-10 text-center flex justify-center">
+    <p>Already have an account ? </p>
+    <a class="hinit">Login</a>
+  </div>
+  <app-button [title]="'Create Acount'"></app-button>
+
+
+  <div class="center_border my-3 gap-3">
+    <div class="border"></div>
+    <p>Or Continue with</p>
+    <div class="border"></div>
+  </div>
+
+  <div class="center_border gap-3">
+
+    <img src="/images/Google.svg" alt="">
+    <img src="/images/Twitter.svg" alt="">
+    <img src="/images/Facebook.svg" alt="">
+    <img src="/images/Apple.svg" alt="">
+  </div>
+</section>
