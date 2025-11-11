@@ -6,3 +6,10 @@
 //   justify-content: center;
 //   border: none;
 // }
+::ng-deep .p-tabview-nav{
+  display: flex;
+}
+::ng-deep .p-dropdown{
+  display: flex;
+  align-items: center;
+}
