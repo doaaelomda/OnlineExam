@@ -1,9 +1,9 @@
 import {
   BaseIcon
-} from "./chunk-QCMLULAX.js";
+} from "./chunk-S5HUP75S.js";
 import {
   UniqueComponentId
-} from "./chunk-AARIAQE6.js";
+} from "./chunk-CBAURO23.js";
 import {
   Component,
   setClassMetadata,
@@ -18,7 +18,7 @@ import {
   ɵɵdomProperty,
   ɵɵgetInheritedFactory,
   ɵɵnamespaceSVG
-} from "./chunk-CAERQGGY.js";
+} from "./chunk-5Q4WA57K.js";
 
 // node_modules/primeng/fesm2022/primeng-icons-spinner.mjs
 var SpinnerIcon = class _SpinnerIcon extends BaseIcon {
@@ -90,4 +90,4 @@ var SpinnerIcon = class _SpinnerIcon extends BaseIcon {
 export {
   SpinnerIcon
 };
-//# sourceMappingURL=chunk-TVMDNUTB.js.map
+//# sourceMappingURL=chunk-ZAH6YERQ.js.map

@@ -6,11 +6,11 @@ import {
   PrimeNGConfig,
   UniqueComponentId,
   zindexutils
-} from "./chunk-AARIAQE6.js";
+} from "./chunk-CBAURO23.js";
 import {
   CommonModule,
   isPlatformBrowser
-} from "./chunk-XIA5AJD3.js";
+} from "./chunk-3RIL62Y6.js";
 import {
   Directive,
   ElementRef,
@@ -22,7 +22,6 @@ import {
   Renderer2,
   TemplateRef,
   ViewContainerRef,
-  __spreadValues,
   booleanAttribute,
   numberAttribute,
   setClassMetadata,
@@ -31,7 +30,10 @@ import {
   ɵɵdefineInjector,
   ɵɵdefineNgModule,
   ɵɵdirectiveInject
-} from "./chunk-CAERQGGY.js";
+} from "./chunk-5Q4WA57K.js";
+import {
+  __spreadValues
+} from "./chunk-PJVWDKLX.js";
 
 // node_modules/primeng/fesm2022/primeng-tooltip.mjs
 var Tooltip = class _Tooltip {
@@ -865,4 +867,4 @@ export {
   Tooltip,
   TooltipModule
 };
-//# sourceMappingURL=chunk-NXXQZYOM.js.map
+//# sourceMappingURL=chunk-6UAJLZW3.js.map

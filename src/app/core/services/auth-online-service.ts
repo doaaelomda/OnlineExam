@@ -11,8 +11,8 @@ import { RegisterUser } from '../modal/registerInfo';
   providedIn: 'root',
 })
 export class AuthOnlineService {
-  private SignInUrl: string = environment.apiUrl + 'auth/signIn';
-  private SignUpUrl: string = environment.apiUrl + 'auth/signup';
+  private SignInUrl: string = environment.apiUrl + '/auth/signIn';
+  private SignUpUrl: string = environment.apiUrl + '/auth/signup';
   constructor(private auth: AuthService, private http: HttpClient) {}
 
   signInUser(userInfo: userInfo): Observable<userResponseLogin> {

@@ -1,13 +1,13 @@
 import { createRequire } from 'module';const require = createRequire(import.meta.url);
 import {
-  InputText,
-  InputTextModule
-} from "./chunk-YHGEDGAM.js";
-import {
   AutoFocus,
   AutoFocusModule
 } from "./chunk-2JSRRM6V.js";
 import "./chunk-BL5C2YTS.js";
+import {
+  InputText,
+  InputTextModule
+} from "./chunk-YHGEDGAM.js";
 import {
   PrimeTemplate,
   SharedModule

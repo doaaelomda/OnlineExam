@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { Component, Inject } from '@angular/core';
 import {
   FormBuilder,
@@ -12,12 +13,31 @@ import { ButtonShared } from '../../../shared/button/button';
 import { InputPassword } from '../../../shared/input-password/input-password';
 import { RouterLink } from '@angular/router';
 import { AuthOnlineService } from '../../../core/services/auth-online-service';
+import { AuthModule } from '../../../../../projects/auth/src/lib/auth.module';
+import { environment } from '../../../environments/environment.';
+import { AUTH_CONFIG } from '../../../../../projects/auth/src/lib/interface/auth-config';
+import { AuthService } from '../../../../../projects/auth/src/lib/services/AuthService';
 
 @Component({
   selector: 'app-login-page',
-  imports: [InputText, ReactiveFormsModule, CommonModule, ButtonShared, InputPassword, RouterLink],
+  standalone: true,
+  imports: [
+    InputText,
+    ReactiveFormsModule,
+    CommonModule,
+    ButtonShared,
+    InputPassword,
+    RouterLink,
+    AuthModule,
+    HttpClientModule
+  ],
+   providers: [
+    { provide: AUTH_CONFIG, useValue: { apiUrl: environment.apiUrl } },
+    AuthService,
+    AuthOnlineService
+  ],
   templateUrl: './login-page.html',
-  styleUrl: './login-page.scss',
+  styleUrls: ['./login-page.scss']
 })
 export class LoginPage {
   loginForm!: FormGroup;

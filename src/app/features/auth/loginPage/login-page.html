@@ -16,7 +16,7 @@
   <div class="mb-10 text-end">
     <a [routerLink]="'/forgetPassword'" class="hinit">Recover Password ?</a>
   </div>
-  <app-button [title]="'Sign in'"></app-button>
+  <app-button (click)="onSubmit()" [title]="'Sign in'"></app-button>
 
   <div class="center_border my-8 gap-3">
     <div class="border"></div>

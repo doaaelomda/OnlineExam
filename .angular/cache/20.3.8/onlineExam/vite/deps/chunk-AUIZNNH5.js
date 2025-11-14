@@ -1,13 +1,13 @@
 import {
   SpinnerIcon
-} from "./chunk-TVMDNUTB.js";
+} from "./chunk-ZAH6YERQ.js";
 import {
   DomHandler
 } from "./chunk-47BQQJB4.js";
 import {
   PrimeTemplate,
   SharedModule
-} from "./chunk-AARIAQE6.js";
+} from "./chunk-CBAURO23.js";
 import {
   CommonModule,
   NgClass,
@@ -16,7 +16,7 @@ import {
   NgStyle,
   NgTemplateOutlet,
   isPlatformBrowser
-} from "./chunk-XIA5AJD3.js";
+} from "./chunk-3RIL62Y6.js";
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
@@ -33,7 +33,6 @@ import {
   Renderer2,
   ViewChild,
   ViewEncapsulation,
-  __spreadValues,
   setClassMetadata,
   ɵɵNgOnChangesFeature,
   ɵɵadvance,
@@ -68,7 +67,10 @@ import {
   ɵɵtemplate,
   ɵɵtemplateRefExtractor,
   ɵɵviewQuery
-} from "./chunk-CAERQGGY.js";
+} from "./chunk-5Q4WA57K.js";
+import {
+  __spreadValues
+} from "./chunk-PJVWDKLX.js";
 
 // node_modules/primeng/fesm2022/primeng-scroller.mjs
 var _c0 = ["element"];
@@ -1564,4 +1566,4 @@ export {
   Scroller,
   ScrollerModule
 };
-//# sourceMappingURL=chunk-FCRIJATM.js.map
+//# sourceMappingURL=chunk-AUIZNNH5.js.map
