@@ -8,17 +8,17 @@
     </div>
 
     <div class="form-group mb-3">
-      <app-input-text [controlNameInput]="'password'" [placeholder]="'********'" [control]="loginForm.get('password')!"
-        [Validation]="ValidationRequired"></app-input-text>
+      <app-input-password [controlNameInput]="'password'" [placeholder]="' ********'" [control]="loginForm.get('password')!"
+        [Validation]="ValidationRequired"></app-input-password>
     </div>
   </form>
 
-  <div class="mb-10 text-end">
-    <a class="hinit">Recover Password ?</a>
+  <div class="mb-3 text-end">
+    <a [routerLink]="'/forgetPassword'" class="hinit">Recover Password ?</a>
   </div>
-  <app-button [title]="'Sign in'"></app-button>
+  <app-button (click)="onSubmit()" [title]="'Sign in'"></app-button>
 
-  <div class="center_border my-8 gap-3">
+  <div class="center_border my-2 gap-3">
     <div class="border"></div>
     <p>Or Continue with</p>
     <div class="border"></div>
@@ -31,3 +31,4 @@
     <img src="/images/Apple.svg" alt="">
   </div>
 </section>
+
