@@ -1,0 +1,30 @@
+<div class="form_group custom-input-card">
+  <div class="phone-input-wrapper">
+   <button type="button" class="country-flag" (click)="toggleDropdown()">
+  <img [src]="selectedCountry.flagUrl" alt="{{ selectedCountry.code }}" width="20" />
+  {{ selectedCountry.dialCode }}
+  <span class="arrow" [class.open]="showDropdown">▼</span>
+</button>
+
+<ul *ngIf="showDropdown" class="country-dropdown">
+  <li *ngFor="let country of countries" (click)="selectCountry(country)">
+    <img [src]="country.flagUrl" alt="{{ country.code }}" width="20" />
+    {{ country.code }} ({{ country.dialCode }})
+  </li>
+</ul>
+    <input
+      type="number"
+      class="custom-input"
+      [placeholder]="placeholder"
+      [formControl]="currentControl"
+      [ngClass]="{
+        'border-danger_color': currentControl.invalid && (currentControl.touched || currentControl.dirty),
+        'border-blue_color': currentControl.valid || !(currentControl.touched || currentControl.dirty)
+      }"
+    />
+  </div>
+
+  <p class="error-box" *ngIf="currentControl.invalid && (currentControl.touched || currentControl.dirty)">
+    {{ errorMessage }}
+  </p>
+</div>

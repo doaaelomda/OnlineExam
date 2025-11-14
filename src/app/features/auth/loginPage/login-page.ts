@@ -4,10 +4,11 @@ import { InputText } from '../../../shared/input-text/input-text';
 import { CommonModule } from '@angular/common';
 import { ButtonShared } from '../../../shared/button/button';
 import { InputPassword } from '../../../shared/input-password/input-password';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
-  imports: [InputText,ReactiveFormsModule,CommonModule,ButtonShared,InputPassword],
+  imports: [InputText,ReactiveFormsModule,CommonModule,ButtonShared,InputPassword,RouterLink],
   templateUrl: './login-page.html',
   styleUrl: './login-page.scss',
 })

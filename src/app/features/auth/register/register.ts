@@ -4,10 +4,12 @@ import { InputText } from '../../../shared/input-text/input-text';
 import { CommonModule } from '@angular/common';
 import { ButtonShared } from '../../../shared/button/button';
 import { InputPassword } from '../../../shared/input-password/input-password';
+import { PhoneNumberInputComponent } from '../../../shared/phone-number-input/phone-number-input';
+import { RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-register',
-  imports: [InputText,ReactiveFormsModule,CommonModule,ButtonShared,InputPassword],
+  imports: [InputText, ReactiveFormsModule, CommonModule, ButtonShared, InputPassword, PhoneNumberInputComponent,RouterLink],
   templateUrl: './register.html',
   styleUrl: './register.scss',
 })
@@ -26,6 +28,7 @@ export class Register {
       email: new FormControl('',),
       password: new FormControl('',[Validators.required]),
       confirmpassword: new FormControl('', [Validators.required]),
+      phoneNumber:new FormControl( null)
     });
   }
 

@@ -7,20 +7,12 @@ import {
   useAnimation
 } from "./chunk-ZGK4HB6I.js";
 import {
+  NG_VALUE_ACCESSOR
+} from "./chunk-AYSJJTUK.js";
+import {
   ConnectedOverlayScrollHandler,
   DomHandler
 } from "./chunk-47BQQJB4.js";
-import {
-  ObjectUtils,
-  OverlayService,
-  PrimeNGConfig,
-  PrimeTemplate,
-  SharedModule,
-  zindexutils
-} from "./chunk-AARIAQE6.js";
-import {
-  NG_VALUE_ACCESSOR
-} from "./chunk-AYSJJTUK.js";
 import {
   CommonModule,
   NgClass,
@@ -29,6 +21,14 @@ import {
   NgTemplateOutlet,
   isPlatformBrowser
 } from "./chunk-AFJG7CRP.js";
+import {
+  ObjectUtils,
+  OverlayService,
+  PrimeNGConfig,
+  PrimeTemplate,
+  SharedModule,
+  zindexutils
+} from "./chunk-AARIAQE6.js";
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
@@ -967,4 +967,4 @@ export {
   Overlay,
   OverlayModule
 };
-//# sourceMappingURL=chunk-M4WOZHVG.js.map
+//# sourceMappingURL=chunk-DMGHI4MN.js.map

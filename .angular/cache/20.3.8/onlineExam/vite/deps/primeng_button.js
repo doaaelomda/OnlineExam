@@ -6,22 +6,22 @@ import {
 } from "./chunk-TVMDNUTB.js";
 import {
   Ripple
-} from "./chunk-THVKAALX.js";
+} from "./chunk-4ZKUZQMH.js";
 import "./chunk-QCMLULAX.js";
 import {
   DomHandler
 } from "./chunk-47BQQJB4.js";
-import {
-  ObjectUtils,
-  PrimeTemplate,
-  SharedModule
-} from "./chunk-AARIAQE6.js";
 import {
   NgClass,
   NgIf,
   NgStyle,
   NgTemplateOutlet
 } from "./chunk-AFJG7CRP.js";
+import {
+  ObjectUtils,
+  PrimeTemplate,
+  SharedModule
+} from "./chunk-AARIAQE6.js";
 import {
   ChangeDetectionStrategy,
   Component,

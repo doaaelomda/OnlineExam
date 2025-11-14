@@ -84,3 +84,14 @@ body {
 .flex.items-center.gap-2 p-dropdown {
   min-width: 120px;
 }
+a:hover{
+cursor: pointer;
+}
+
+.disabled-button {
+  background-color: #ccc !important;
+  border-color: #aaa !important;
+  color: #666 !important;
+  cursor: not-allowed !important;
+  opacity: 0.7;
+}

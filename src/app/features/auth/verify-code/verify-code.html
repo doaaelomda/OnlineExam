@@ -1,0 +1,28 @@
+<section class="centered-form">
+  <p class="header_form">Verify Otp</p>
+
+<form [formGroup]="codeForm" (ngSubmit)="onSubmit()">
+  <div class="form-group py-8">
+    <p-inputOtp formControlName="otp" />
+  </div>
+</form>
+
+
+    <div class="mb-10 text-end">
+    <a [routerLink]="'/forgetPassword'" class="hinit">Recover Password ?</a>
+  </div>
+  <app-button [disabled]="!codeForm.valid" (click)="onSubmit()" [title]="'Verify Code'"></app-button>
+
+  <div class="center_border my-8 gap-3">
+    <div class="border"></div>
+    <p>Or Continue with</p>
+    <div class="border"></div>
+  </div>
+
+  <div class="center_border gap-3">
+    <img src="/images/Google.svg" alt="">
+    <img src="/images/Twitter.svg" alt="">
+    <img src="/images/Facebook.svg" alt="">
+    <img src="/images/Apple.svg" alt="">
+  </div>
+</section>

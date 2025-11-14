@@ -7,14 +7,10 @@ import {
   Tooltip,
   TooltipModule
 } from "./chunk-PDHDFLIY.js";
-import "./chunk-4KUPRNSF.js";
 import {
   TimesIcon
 } from "./chunk-MVOKDQR3.js";
-import {
-  AutoFocus,
-  AutoFocusModule
-} from "./chunk-TJV6IOV5.js";
+import "./chunk-4KUPRNSF.js";
 import {
   BaseIcon
 } from "./chunk-PJW3QVKY.js";
@@ -27,6 +23,10 @@ import {
   Ripple,
   RippleModule
 } from "./chunk-CVQVRFGE.js";
+import {
+  AutoFocus,
+  AutoFocusModule
+} from "./chunk-TJV6IOV5.js";
 import {
   DomHandler
 } from "./chunk-BL5C2YTS.js";

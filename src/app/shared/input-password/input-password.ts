@@ -10,6 +10,7 @@ import { Validation } from '../../core/modal/validators';
   imports: [ ReactiveFormsModule,CommonModule,PasswordModule],
   templateUrl: './input-password.html',
   styleUrl: './input-password.scss',
+  standalone:true
 
 })
 export class InputPassword implements OnChanges {
