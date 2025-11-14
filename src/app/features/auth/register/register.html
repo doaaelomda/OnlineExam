@@ -1,49 +1,76 @@
 <section>
   <p class="header_form">Register</p>
 
-  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="grid grid-cols-2 gap-4 my-2">
 
-      <div class="form-group my-6">
-      <app-input-text [controlNameInput]="'userName'" [placeholder]="'UserName'"
-        [control]="registerForm.get('username')!" [Validation]="ValidationRequired"></app-input-text>
-    </div>
-    <div class="form-group ">
-      <app-input-text [controlNameInput]="'firstName'" [placeholder]="'First Name'"
-        [control]="registerForm.get('firstName')!" [Validation]="ValidationRequired"></app-input-text>
-    </div>
-    <div class="form-group my-6 ">
-      <app-input-text [controlNameInput]="'lastName'" [placeholder]="'Last Name'"
-        [control]="registerForm.get('lastName')!" [Validation]="ValidationRequired"></app-input-text>
-    </div>
-    <div class="form-group ">
-      <app-input-text [controlNameInput]="'email'" [placeholder]="'Enter Email'"
-        [control]="registerForm.get('email')!" [Validation]="ValidationRequired"></app-input-text>
-    </div>
-    <div class="form-group my-6">
-        <app-phone-number-input
+    <app-input-text 
+    [controlNameInput]="'username'" 
+    [placeholder]="'UserName'"
+    [control]="registerForm.get('username')!" 
+    [Validation]="ValidationRequired"
+    class="col-span-2">
+  </app-input-text> 
+
+  <!-- First Name & Last Name جنب بعض -->
+  <app-input-text 
+    [controlNameInput]="'firstName'" 
+    [placeholder]="'First Name'"
+    [control]="registerForm.get('firstName')!" 
+    [Validation]="ValidationRequired"
+    class="col-span-1">
+  </app-input-text>
+
+  <app-input-text 
+    [controlNameInput]="'lastName'" 
+    [placeholder]="'Last Name'"
+    [control]="registerForm.get('lastName')!" 
+    [Validation]="ValidationRequired"
+    class="col-span-1">
+  </app-input-text>
+
+    <app-input-password 
+    [controlNameInput]="'password'" 
+    [placeholder]="'Password'"
+    [control]="registerForm.get('password')!" 
+    [Validation]="ValidationRequired"
+    class="col-span-1">
+  </app-input-password>
+
+  <app-input-password 
+    [controlNameInput]="'rePassword'" 
+    [placeholder]="'Confirm Password'"
+    [control]="registerForm.get('rePassword')!" 
+    [Validation]="ValidationRequired"
+    class="col-span-1">
+  </app-input-password>
+
+  <app-input-text 
+    [controlNameInput]="'email'" 
+    [placeholder]="'Enter Email'"
+    [control]="registerForm.get('email')!" 
+    [Validation]="ValidationRequired"
+    class="col-span-2">
+  </app-input-text>
+
+  <app-phone-number-input
     [control]="registerForm.get('phone')"
-    [placeholder]="'please enter phone'"
+    [placeholder]="'Please enter phone'"
     [defaultCountry]="'LK'"
-  ></app-phone-number-input>
-    </div>
-    <div class="form-group ">
-      <app-input-password [controlNameInput]="'password'" [placeholder]="'Password'"
-        [control]="registerForm.get('password')!" [Validation]="ValidationRequired"></app-input-password>
-    </div>
-    <div class="form-group my-6">
-      <app-input-password [controlNameInput]="'rePassword'" [placeholder]="'Confirm Password'"
-        [control]="registerForm.get('rePassword')!" [Validation]="ValidationRequired"></app-input-password>
-    </div>
+    class="col-span-2">
+  </app-phone-number-input>
 
-  </form>
-  <div class="mb-10 text-center flex justify-center">
+
+</form>
+
+
+  <div class="mb-3 text-center flex justify-center">
     <p>Already have an account ? </p>
     <a [routerLink]="'/login'" class="hinit">Login</a>
   </div>
   <app-button (click)="onSubmit()" [title]="'Create Acount'"></app-button>
 
 
-  <div class="center_border my-3 gap-3">
+  <div class="center_border my-2 gap-3">
     <div class="border"></div>
     <p>Or Continue with</p>
     <div class="border"></div>

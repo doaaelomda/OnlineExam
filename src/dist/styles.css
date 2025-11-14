@@ -86,3 +86,7 @@ body {
 .flex.items-center.gap-2 p-dropdown {
   min-width: 120px;
 }
+
+.p-tabview-panels {
+  display: none;
+}
