@@ -6,7 +6,10 @@ import { StatusInterceptor } from './interceptors/status.interceptor';
 import { AuthConfig, AUTH_CONFIG } from './interface/auth-config';
 
 @NgModule({
-  imports: [HttpClientModule]
+  imports: [HttpClientModule],
+  providers: [
+    AuthService,
+  ],
 })
 export class AuthModule {
   static forRoot(config: AuthConfig): ModuleWithProviders<AuthModule> {
@@ -14,10 +17,11 @@ export class AuthModule {
       ngModule: AuthModule,
       providers: [
         AuthService,
-        { provide: AUTH_CONFIG, useValue: config },
+        { provide: AUTH_CONFIG, useValue: config },  // ✅ This is correct
         { provide: HTTP_INTERCEPTORS, useClass: LANGInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: StatusInterceptor, multi: true },
-      ]
+      ],
     };
   }
 }
+

@@ -6,6 +6,7 @@ import { ButtonShared } from '../../../shared/button/button';
 import { InputPassword } from '../../../shared/input-password/input-password';
 import { PhoneNumberInputComponent } from '../../../shared/phone-number-input/phone-number-input';
 import { RouterLink} from '@angular/router';
+import { AuthOnlineService } from '../../../core/services/auth-online-service';
 
 @Component({
   selector: 'app-register',
@@ -15,14 +16,18 @@ import { RouterLink} from '@angular/router';
 })
 export class Register {
 
-  registerForm: FormGroup;
+  registerForm!: FormGroup;
   ValidationRequired = [
   { key: 'required', message: 'This field is required' },
   { key: 'email', message: 'Invalid email address' }
 ];
 
-  constructor(private fb: FormBuilder) {
-    this.registerForm = this.fb.group({
+  constructor(private fb: FormBuilder,private _AuthOnlineService:AuthOnlineService) {
+    this.initialRegisterForm()
+  }
+
+  initialRegisterForm(){
+        this.registerForm = this.fb.group({
       firstName: new FormControl('', [Validators.required]),
       lastName: new FormControl(''),
       email: new FormControl('',),
@@ -33,10 +38,15 @@ export class Register {
   }
 
   onSubmit() {
-    if (this.registerForm.valid) {
+    if (this.registerForm.invalid) {
       console.log('Form Data:', this.registerForm.value);
+      this.registerForm.markAllAsTouched();
+      return;
     } else {
-      console.log('Form Invalid');
+      const payload = { ...this.registerForm.value };
+      this._AuthOnlineService.signUpUser(payload).subscribe((res: any) => {
+        console.log('user.info is right', res);
+      });
     }
   }
 }

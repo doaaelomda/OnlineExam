@@ -39,12 +39,6 @@
       "path": "./tsconfig.spec.json"
     },
     {
-      "path": "./projects/auth-library/tsconfig.lib.json"
-    },
-    {
-      "path": "./projects/auth-library/tsconfig.spec.json"
-    },
-    {
       "path": "./projects/auth/tsconfig.lib.json"
     },
     {
