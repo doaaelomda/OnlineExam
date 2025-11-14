@@ -1,28 +1,30 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Slider } from './shared/slider/slider';
-import { TabViewModule } from 'primeng/tabview';
-import { LoginPage } from './features/auth/loginPage/login-page';
-import { Register } from './features/auth/register/register';
-import { DropdownModule } from 'primeng/dropdown';
-import { FormsModule } from '@angular/forms';
+import { RouterOutlet } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthModule } from './../../projects/auth/src/lib/auth.module';
+import { environment } from './environments/environment.';
+import { AUTH_CONFIG } from '../../projects/auth/src/lib/interface/auth-config';
+import { MessageService } from 'primeng/api';
+import { ToastModule } from 'primeng/toast';
+
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, Slider,TabViewModule,LoginPage,Register,DropdownModule,FormsModule],
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    HttpClientModule,
+    AuthModule,
+    ToastModule   // ✅ Required for <p-toast>
+  ],
   templateUrl: './app.html',
-  styleUrls: ['./app.scss']
+  styleUrls: ['./app.scss'],
+  providers: [
+    { provide: AUTH_CONFIG, useValue: { apiUrl: environment.apiUrl } },
+    MessageService
+  ]
 })
 export class App {
   protected readonly title = signal('onlineExam');
-  myValue=''
-    languages = [
-    { label: 'English', value: 'en' },
-    { label: 'Arabic', value: 'ar' },
-  ];
-
-  selectedLanguage = { label: 'English', value: 'en' };
-  onLanguageChange() {
-    console.log('Language changed to:', this.selectedLanguage.value);
-  }
 }

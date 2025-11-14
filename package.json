@@ -23,7 +23,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^20.3.9",
+    "@angular/animations": "^20.3.12",
     "@angular/common": "^20.3.0",
     "@angular/compiler": "^20.3.0",
     "@angular/core": "^20.3.0",
@@ -35,9 +35,11 @@
     "@ngx-translate/core": "^17.0.0",
     "@ngx-translate/http-loader": "^17.0.0",
     "@tailwindcss/cli": "^4.1.16",
+    "angular-phone-number-input": "^1.1.2",
     "express": "^5.1.0",
+    "ngx-toastr": "^19.1.0",
     "primeicons": "^7.0.0",
-    "primeng": "^17.18.15",
+    "primeng": "^17.2.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },
@@ -56,10 +58,11 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "libphonenumber-js": "^1.12.26",
+    "ng-packagr": "^20.3.2",
     "postcss": "^8.5.6",
     "tailwindcss": "^3.4.18",
-    "typescript": "~5.9.2",
-    "vite": "^7.1.12"
+    "typescript": "~5.9.2"
   },
   "description": "This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.1.",
   "main": "index.js",

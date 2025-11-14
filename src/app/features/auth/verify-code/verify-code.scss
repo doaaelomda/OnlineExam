@@ -1,0 +1,13 @@
+.centered-form { transform: translateY(15%); -webkit-transform: translateY(15%); -moz-transform: translateY(15%); -ms-transform: translateY(15%); -o-transform: translateY(15%);
+}
+::ng-deep .p-inputotp-input{
+
+    width: 70px;
+    height: 70px;
+    border: 1px solid #eee;
+}
+::ng-deep .p-inputotp{
+    display: flex;
+    justify-content: center;
+}
+
