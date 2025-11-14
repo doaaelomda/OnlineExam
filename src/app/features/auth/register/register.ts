@@ -3,10 +3,11 @@ import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } 
 import { InputText } from '../../../shared/input-text/input-text';
 import { CommonModule } from '@angular/common';
 import { ButtonShared } from '../../../shared/button/button';
+import { InputPassword } from '../../../shared/input-password/input-password';
 
 @Component({
   selector: 'app-register',
-  imports: [InputText,ReactiveFormsModule,CommonModule,ButtonShared],
+  imports: [InputText,ReactiveFormsModule,CommonModule,ButtonShared,InputPassword],
   templateUrl: './register.html',
   styleUrl: './register.scss',
 })

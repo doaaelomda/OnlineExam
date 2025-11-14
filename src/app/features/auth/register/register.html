@@ -17,12 +17,12 @@
 
 
     <div class="form-group">
-      <app-input-text [controlNameInput]="'password'" [placeholder]="'Password'" [control]="registerForm.get('password')!"
-        ></app-input-text>
+      <app-input-password  [controlNameInput]="'password'" [placeholder]="'Password'" [control]="registerForm.get('password')!"
+        ></app-input-password>
     </div>
        <div class="form-group my-6">
-      <app-input-text [controlNameInput]="'confirmpassword'" [placeholder]="'Confirm Password'" [control]="registerForm.get('confirmpassword')!"
-        ></app-input-text>
+      <app-input-password [controlNameInput]="'confirmpassword'" [placeholder]="'Confirm Password'" [control]="registerForm.get('confirmpassword')!"
+        ></app-input-password>
     </div>
 
   </form>

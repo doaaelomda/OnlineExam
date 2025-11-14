@@ -2,11 +2,11 @@ import {
   AutoFocus
 } from "./chunk-JCQFZFVC.js";
 import {
-  Ripple
-} from "./chunk-THVKAALX.js";
-import {
   SpinnerIcon
 } from "./chunk-TVMDNUTB.js";
+import {
+  Ripple
+} from "./chunk-THVKAALX.js";
 import "./chunk-QCMLULAX.js";
 import {
   DomHandler
