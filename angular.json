@@ -95,6 +95,32 @@
           }
         }
       }
+    },
+    "authLibrary": {
+      "projectType": "library",
+      "root": "projects/auth-library",
+      "sourceRoot": "projects/auth-library/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/auth-library/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/auth-library/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "projects/auth-library/tsconfig.spec.json"
+          }
+        }
+      }
     }
   },
   "cli": {
