@@ -13,7 +13,7 @@
   </li>
 </ul>
     <input
-      type="number"
+      type="text"
       class="custom-input"
       [placeholder]="placeholder"
       [formControl]="currentControl"
@@ -24,7 +24,4 @@
     />
   </div>
 
-  <p class="error-box" *ngIf="currentControl.invalid && (currentControl.touched || currentControl.dirty)">
-    {{ errorMessage }}
-  </p>
 </div>

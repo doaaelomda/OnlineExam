@@ -19,10 +19,8 @@ interface Country {
 export class PhoneNumberInputComponent implements OnChanges {
 
   @Input() control!: AbstractControl | null;
-  @Input() placeholder: string = 'رقم الهاتف';
+  @Input() placeholder: string = '';
   @Input() defaultCountry: string = 'LK';
-  @Input() errorMessage: string = 'رقم الهاتف غير صحيح';
-
   currentControl!: FormControl;
   selectedCountry!: Country;
   showDropdown: boolean = false;

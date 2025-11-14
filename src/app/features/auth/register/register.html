@@ -2,33 +2,37 @@
   <p class="header_form">Register</p>
 
   <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-    <div class="form-group my-6">
-      <app-input-text [controlNameInput]="'firstName'" [placeholder]="'First Name'"
-        [control]="registerForm.get('firstName')!"></app-input-text>
+
+      <div class="form-group my-6">
+      <app-input-text [controlNameInput]="'userName'" [placeholder]="'UserName'"
+        [control]="registerForm.get('username')!" [Validation]="ValidationRequired"></app-input-text>
     </div>
     <div class="form-group ">
+      <app-input-text [controlNameInput]="'firstName'" [placeholder]="'First Name'"
+        [control]="registerForm.get('firstName')!" [Validation]="ValidationRequired"></app-input-text>
+    </div>
+    <div class="form-group my-6 ">
       <app-input-text [controlNameInput]="'lastName'" [placeholder]="'Last Name'"
-        [control]="registerForm.get('lastName')!"></app-input-text>
+        [control]="registerForm.get('lastName')!" [Validation]="ValidationRequired"></app-input-text>
+    </div>
+    <div class="form-group ">
+      <app-input-text [controlNameInput]="'email'" [placeholder]="'Enter Email'"
+        [control]="registerForm.get('email')!" [Validation]="ValidationRequired"></app-input-text>
     </div>
     <div class="form-group my-6">
-      <app-input-text [controlNameInput]="'email'" [placeholder]="'Enter Email'"
-        [control]="registerForm.get('email')!"></app-input-text>
-    </div>
-    <div class="form-group">
         <app-phone-number-input
-    [control]="registerForm.get('phoneNumber')"
-    [placeholder]="'أدخل رقم الهاتف'"
+    [control]="registerForm.get('phone')"
+    [placeholder]="'please enter phone'"
     [defaultCountry]="'LK'"
-    [errorMessage]="'رقم الهاتف غير صحيح'"
   ></app-phone-number-input>
     </div>
-    <div class="form-group my-6">
+    <div class="form-group ">
       <app-input-password [controlNameInput]="'password'" [placeholder]="'Password'"
-        [control]="registerForm.get('password')!"></app-input-password>
+        [control]="registerForm.get('password')!" [Validation]="ValidationRequired"></app-input-password>
     </div>
     <div class="form-group my-6">
-      <app-input-password [controlNameInput]="'confirmpassword'" [placeholder]="'Confirm Password'"
-        [control]="registerForm.get('confirmpassword')!"></app-input-password>
+      <app-input-password [controlNameInput]="'rePassword'" [placeholder]="'Confirm Password'"
+        [control]="registerForm.get('rePassword')!" [Validation]="ValidationRequired"></app-input-password>
     </div>
 
   </form>
@@ -36,7 +40,7 @@
     <p>Already have an account ? </p>
     <a [routerLink]="'/login'" class="hinit">Login</a>
   </div>
-  <app-button [title]="'Create Acount'"></app-button>
+  <app-button (click)="onSubmit()" [title]="'Create Acount'"></app-button>
 
 
   <div class="center_border my-3 gap-3">

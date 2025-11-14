@@ -2,9 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "primeng/resources/themes/lara-light-blue/theme.css";
-@import "primeng/resources/primeng.css";
-
+@import "primeng/resources/themes/lara-light-blue/theme.css"; 
+@import "primeng/resources/primeng.min.css";
 @import "primeicons/primeicons.css";
 
 body {
@@ -25,7 +24,7 @@ body {
 }
 
 .slider-content {
-  padding-top: 130px;
+  padding-top: 70px;
   padding-right: 79px;
   padding-bottom: 60px;
   padding-left: 172px;

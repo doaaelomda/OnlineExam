@@ -5,5 +5,5 @@ export interface RegisterUser {
   email: string;
   password: string;
   rePassword: string;
-  phone: number;
+  phone: string;
 }

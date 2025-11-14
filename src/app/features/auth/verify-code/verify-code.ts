@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { ButtonShared } from '../../../shared/button/button';
-import { InputOtpModule } from 'primeng/inputotp';
+// import { InputOtpModule } from 'primeng/inputotp';
 
 @Component({
   selector: 'app-verify-code',
-  imports: [ReactiveFormsModule,RouterLink,ButtonShared,InputOtpModule],
+  imports: [ReactiveFormsModule,RouterLink,ButtonShared],
   templateUrl: './verify-code.html',
   styleUrl: './verify-code.scss',
 })

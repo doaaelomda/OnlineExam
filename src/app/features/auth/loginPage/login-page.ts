@@ -17,7 +17,8 @@ import { AuthModule } from '../../../../../projects/auth/src/lib/auth.module';
 import { environment } from '../../../environments/environment.';
 import { AUTH_CONFIG } from '../../../../../projects/auth/src/lib/interface/auth-config';
 import { AuthService } from '../../../../../projects/auth/src/lib/services/AuthService';
-
+import { ToastrService } from 'ngx-toastr';
+import { MessageService } from 'primeng/api';
 @Component({
   selector: 'app-login-page',
   standalone: true,
@@ -29,21 +30,25 @@ import { AuthService } from '../../../../../projects/auth/src/lib/services/AuthS
     InputPassword,
     RouterLink,
     AuthModule,
-    HttpClientModule
+    HttpClientModule,
+    
   ],
-   providers: [
+  providers: [
     { provide: AUTH_CONFIG, useValue: { apiUrl: environment.apiUrl } },
     AuthService,
-    AuthOnlineService
+    AuthOnlineService,
   ],
   templateUrl: './login-page.html',
-  styleUrls: ['./login-page.scss']
+  styleUrls: ['./login-page.scss'],
 })
 export class LoginPage {
   loginForm!: FormGroup;
   ValidationRequired = [{ key: 'required', message: 'This field is required' }];
-
-  constructor(private fb: FormBuilder, private _AuthOnlineService: AuthOnlineService) {
+  constructor(
+    private fb: FormBuilder,
+    private _AuthOnlineService: AuthOnlineService,
+    private messageService: MessageService
+  ) {
     this.initialForm();
   }
 
@@ -53,16 +58,35 @@ export class LoginPage {
       password: new FormControl('', [Validators.required]),
     });
   }
+
   onSubmit() {
     if (this.loginForm.invalid) {
-      console.log('Form Data:', this.loginForm.value);
       this.loginForm.markAllAsTouched();
       return;
-    } else {
-      const payload = { ...this.loginForm.value };
-      this._AuthOnlineService.signInUser(payload).subscribe((res: any) => {
-        console.log('user.info is right', res);
-      });
     }
+
+    const payload = { ...this.loginForm.value };
+    this._AuthOnlineService.signInUser(payload).subscribe((res: any) => {
+      debugger;
+      if (res.message == 'success') {
+        this.messageService.add({
+          severity: 'success',
+          summary: 'success',
+          detail: 'user login is done',
+          life: 3000,
+        });
+        this.loginForm.reset()
+      }
+      else{
+        this.messageService.add({
+          severity: 'error',
+          summary: 'error',
+          detail: 'user login is faild',
+          life: 3000,
+        });
+        this.loginForm.reset()
+
+      }
+    });
   }
 }
