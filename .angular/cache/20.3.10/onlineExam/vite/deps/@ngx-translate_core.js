@@ -15,7 +15,7 @@ import {
   ɵɵdefineNgModule,
   ɵɵdefinePipe,
   ɵɵgetInheritedFactory
-} from "./chunk-N7GIAB45.js";
+} from "./chunk-2UCZLSPU.js";
 import {
   Subject,
   __spreadValues,
@@ -29,9 +29,9 @@ import {
   shareReplay,
   switchMap,
   take
-} from "./chunk-PJVWDKLX.js";
+} from "./chunk-3GCYM5XO.js";
 
-// node_modules/@ngx-translate/core/fesm2022/ngx-translate-core.mjs
+// ../../../../node_modules/@ngx-translate/core/fesm2022/ngx-translate-core.mjs
 function _(key) {
   return key;
 }
