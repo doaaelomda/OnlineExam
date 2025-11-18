@@ -8,11 +8,11 @@ import {
 import {
   BaseIcon
 } from "./chunk-YGNF4YTC.js";
-import "./chunk-D272CXXL.js";
 import {
   InputText,
   InputTextModule
 } from "./chunk-74DBDWWS.js";
+import "./chunk-D272CXXL.js";
 import {
   ConnectedOverlayScrollHandler,
   DomHandler
@@ -27,14 +27,14 @@ import {
   zindexutils
 } from "./chunk-UYEJ3NGZ.js";
 import {
-  NG_VALUE_ACCESSOR
-} from "./chunk-DVAPA7FU.js";
-import {
   animate,
   style,
   transition,
   trigger
 } from "./chunk-YXHYITG5.js";
+import {
+  NG_VALUE_ACCESSOR
+} from "./chunk-DVAPA7FU.js";
 import {
   CommonModule,
   NgClass,

@@ -1,9 +1,5 @@
 import { createRequire } from 'module';const require = createRequire(import.meta.url);
 import {
-  InputText,
-  InputTextModule
-} from "./chunk-TXJGQTBO.js";
-import {
   TimesIcon
 } from "./chunk-UXEOJS4K.js";
 import "./chunk-YL6IVL5H.js";
@@ -19,6 +15,13 @@ import {
   DomHandler
 } from "./chunk-BL5C2YTS.js";
 import {
+  InputText,
+  InputTextModule
+} from "./chunk-G2CFAWXG.js";
+import {
+  NG_VALUE_ACCESSOR
+} from "./chunk-TBXNJ54Y.js";
+import {
   OverlayService,
   PrimeNGConfig,
   PrimeTemplate,
@@ -33,9 +36,6 @@ import {
   transition,
   trigger
 } from "./chunk-3MTHALEB.js";
-import {
-  NG_VALUE_ACCESSOR
-} from "./chunk-TBXNJ54Y.js";
 import {
   CommonModule,
   NgClass,

@@ -1,7 +1,11 @@
+import { createRequire } from 'module';const require = createRequire(import.meta.url);
 import {
   ConnectedOverlayScrollHandler,
   DomHandler
-} from "./chunk-47BQQJB4.js";
+} from "./chunk-BL5C2YTS.js";
+import {
+  NG_VALUE_ACCESSOR
+} from "./chunk-TBXNJ54Y.js";
 import {
   ObjectUtils,
   OverlayService,
@@ -9,10 +13,7 @@ import {
   PrimeTemplate,
   SharedModule,
   zindexutils
-} from "./chunk-UYEJ3NGZ.js";
-import {
-  NG_VALUE_ACCESSOR
-} from "./chunk-DVAPA7FU.js";
+} from "./chunk-6OT62SRX.js";
 import {
   animate,
   animation,
@@ -20,7 +21,7 @@ import {
   transition,
   trigger,
   useAnimation
-} from "./chunk-YXHYITG5.js";
+} from "./chunk-3MTHALEB.js";
 import {
   CommonModule,
   NgClass,
@@ -28,7 +29,7 @@ import {
   NgStyle,
   NgTemplateOutlet,
   isPlatformBrowser
-} from "./chunk-25NVM3RJ.js";
+} from "./chunk-RAN24RGN.js";
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
@@ -74,10 +75,10 @@ import {
   ɵɵrestoreView,
   ɵɵtemplate,
   ɵɵviewQuery
-} from "./chunk-N7GIAB45.js";
+} from "./chunk-46ITGDXS.js";
 import {
   __spreadValues
-} from "./chunk-PJVWDKLX.js";
+} from "./chunk-6DU2HRTW.js";
 
 // node_modules/primeng/fesm2022/primeng-overlay.mjs
 var _c0 = ["overlay"];
@@ -969,4 +970,4 @@ export {
   Overlay,
   OverlayModule
 };
-//# sourceMappingURL=chunk-DKZE5GOE.js.map
+//# sourceMappingURL=chunk-AFKNIAQ4.js.map

@@ -4,15 +4,15 @@ import {
   TooltipModule
 } from "./chunk-6LERRZWY.js";
 import {
+  Ripple,
+  RippleModule
+} from "./chunk-435Z2JUO.js";
+import {
   TimesIcon
 } from "./chunk-UXEOJS4K.js";
 import {
   BaseIcon
 } from "./chunk-DTZ2TACP.js";
-import {
-  Ripple,
-  RippleModule
-} from "./chunk-435Z2JUO.js";
 import {
   DomHandler
 } from "./chunk-BL5C2YTS.js";
