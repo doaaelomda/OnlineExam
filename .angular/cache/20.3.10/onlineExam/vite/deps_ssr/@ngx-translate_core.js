@@ -17,16 +17,16 @@ import {
   ɵɵdefineNgModule,
   ɵɵdefinePipe,
   ɵɵgetInheritedFactory
-} from "./chunk-GSMUXCJJ.js";
+} from "./chunk-46ITGDXS.js";
 import {
   require_cjs
-} from "./chunk-EF3TYZLX.js";
+} from "./chunk-O5J3CNTX.js";
 import {
   __spreadValues,
   __toESM
 } from "./chunk-6DU2HRTW.js";
 
-// ../../../../node_modules/@ngx-translate/core/fesm2022/ngx-translate-core.mjs
+// node_modules/@ngx-translate/core/fesm2022/ngx-translate-core.mjs
 var import_rxjs = __toESM(require_cjs(), 1);
 var import_operators = __toESM(require_operators(), 1);
 function _(key) {

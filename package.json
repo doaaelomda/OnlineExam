@@ -41,6 +41,7 @@
     "primeicons": "^7.0.0",
     "primeng": "^17.2.0",
     "rxjs": "~7.8.0",
+    "tailwind": "^4.0.0",
     "tslib": "^2.3.0"
   },
   "devDependencies": {

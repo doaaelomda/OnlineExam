@@ -1,28 +1,28 @@
 import {
   SpinnerIcon
-} from "./chunk-JX2EUAJN.js";
+} from "./chunk-4SETBJIU.js";
 import {
   AutoFocus
-} from "./chunk-PMDPQAKP.js";
-import "./chunk-IN7J6VQG.js";
+} from "./chunk-YJXVDXAF.js";
+import "./chunk-YGNF4YTC.js";
 import {
   Ripple
-} from "./chunk-OV2TASFP.js";
+} from "./chunk-OHHOO2CN.js";
 import {
   DomHandler
-} from "./chunk-KRXRMKT6.js";
+} from "./chunk-47BQQJB4.js";
 import {
   ObjectUtils,
   PrimeTemplate,
   SharedModule
-} from "./chunk-EAQ34OSM.js";
+} from "./chunk-UYEJ3NGZ.js";
 import {
   NgClass,
   NgIf,
   NgStyle,
   NgTemplateOutlet
-} from "./chunk-ONTE2ICW.js";
-import "./chunk-MZS37CWM.js";
+} from "./chunk-25NVM3RJ.js";
+import "./chunk-APPCZKFW.js";
 import {
   ChangeDetectionStrategy,
   Component,
@@ -66,10 +66,10 @@ import {
   ɵɵtemplate,
   ɵɵtext,
   ɵɵtextInterpolate
-} from "./chunk-2UCZLSPU.js";
-import "./chunk-3GCYM5XO.js";
+} from "./chunk-N7GIAB45.js";
+import "./chunk-PJVWDKLX.js";
 
-// ../../../../node_modules/primeng/fesm2022/primeng-button.mjs
+// node_modules/primeng/fesm2022/primeng-button.mjs
 var _c0 = ["*"];
 var _c1 = (a0) => ({
   class: a0
