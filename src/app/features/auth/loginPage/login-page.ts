@@ -11,12 +11,9 @@ import { InputText } from '../../../shared/input-text/input-text';
 import { CommonModule } from '@angular/common';
 import { ButtonShared } from '../../../shared/button/button';
 import { InputPassword } from '../../../shared/input-password/input-password';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { AuthOnlineService } from '../../../core/services/auth-online-service';
-import { AuthModule } from '../../../../../projects/auth/src/lib/auth.module';
 import { environment } from '../../../environments/environment.';
-import { AUTH_CONFIG } from '../../../../../projects/auth/src/lib/interface/auth-config';
-import { AuthService } from '../../../../../projects/auth/src/lib/services/AuthService';
 import { ToastrService } from 'ngx-toastr';
 import { MessageService } from 'primeng/api';
 @Component({
@@ -29,14 +26,9 @@ import { MessageService } from 'primeng/api';
     ButtonShared,
     InputPassword,
     RouterLink,
-    AuthModule,
+    // AuthModule,
     HttpClientModule,
     
-  ],
-  providers: [
-    { provide: AUTH_CONFIG, useValue: { apiUrl: environment.apiUrl } },
-    AuthService,
-    AuthOnlineService,
   ],
   templateUrl: './login-page.html',
   styleUrls: ['./login-page.scss'],
@@ -47,7 +39,8 @@ export class LoginPage {
   constructor(
     private fb: FormBuilder,
     private _AuthOnlineService: AuthOnlineService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private _router:Router
   ) {
     this.initialForm();
   }
@@ -68,25 +61,26 @@ export class LoginPage {
     const payload = { ...this.loginForm.value };
     this._AuthOnlineService.signInUser(payload).subscribe((res: any) => {
       debugger;
-      if (res.message == 'success') {
+      // if (res) {
         this.messageService.add({
           severity: 'success',
           summary: 'success',
           detail: 'user login is done',
           life: 3000,
         });
+               this._router.navigate(['/home'])
         this.loginForm.reset()
-      }
-      else{
-        this.messageService.add({
-          severity: 'error',
-          summary: 'error',
-          detail: 'user login is faild',
-          life: 3000,
-        });
-        this.loginForm.reset()
+      // }
+      // else{
+      //   this.messageService.add({
+      //     severity: 'error',
+      //     summary: 'error',
+      //     detail: 'user login is faild',
+      //     life: 3000,
+      //   });
+      //   this.loginForm.reset()
 
-      }
+      // }
     });
   }
 }

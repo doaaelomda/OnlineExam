@@ -9,7 +9,8 @@ module.exports = {
     extend: {},
       colors: {
       primary_custom: 'rgba(68, 97, 242, 1)',
-      black:'rgba(0, 0, 0, 1)'
+      black:'rgba(0, 0, 0, 1)',
+      white:'#FFFFFF'
     },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],

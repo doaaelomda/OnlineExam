@@ -5,6 +5,7 @@ import { ForgetPassword } from './forget-password/forget-password';
 import { AuthLayoutContainer } from './auth-layout-container/auth-layout-container';
 import { VerifyCode } from './verify-code/verify-code';
 import { SetPassword } from './set-password/set-password';
+import { HomePage } from '../pages/home-page/home-page';
 
 export const routesLogin: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -19,4 +20,5 @@ export const routesLogin: Routes = [
       { path: 'setPassword', component: SetPassword },
     ],
   },
+  { path: 'home', component: HomePage },
 ];

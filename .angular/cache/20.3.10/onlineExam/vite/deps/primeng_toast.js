@@ -2,16 +2,16 @@ import {
   CheckIcon
 } from "./chunk-RMD654RR.js";
 import {
+  Ripple,
+  RippleModule
+} from "./chunk-OHHOO2CN.js";
+import {
   TimesIcon
 } from "./chunk-T6ZHX4WK.js";
 import {
   BaseIcon
 } from "./chunk-YGNF4YTC.js";
 import "./chunk-D272CXXL.js";
-import {
-  Ripple,
-  RippleModule
-} from "./chunk-OHHOO2CN.js";
 import {
   DomHandler
 } from "./chunk-47BQQJB4.js";

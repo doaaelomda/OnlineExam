@@ -4,10 +4,10 @@ import {
 import {
   AutoFocus
 } from "./chunk-YJXVDXAF.js";
-import "./chunk-YGNF4YTC.js";
 import {
   Ripple
 } from "./chunk-OHHOO2CN.js";
+import "./chunk-YGNF4YTC.js";
 import {
   DomHandler
 } from "./chunk-47BQQJB4.js";

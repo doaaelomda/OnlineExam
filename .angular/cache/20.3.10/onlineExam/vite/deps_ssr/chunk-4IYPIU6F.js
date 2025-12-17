@@ -1,11 +1,11 @@
 import { createRequire } from 'module';const require = createRequire(import.meta.url);
 import {
+  NG_VALUE_ACCESSOR
+} from "./chunk-TBXNJ54Y.js";
+import {
   ConnectedOverlayScrollHandler,
   DomHandler
 } from "./chunk-BL5C2YTS.js";
-import {
-  NG_VALUE_ACCESSOR
-} from "./chunk-TBXNJ54Y.js";
 import {
   ObjectUtils,
   OverlayService,
@@ -970,4 +970,4 @@ export {
   Overlay,
   OverlayModule
 };
-//# sourceMappingURL=chunk-AFKNIAQ4.js.map
+//# sourceMappingURL=chunk-4IYPIU6F.js.map
