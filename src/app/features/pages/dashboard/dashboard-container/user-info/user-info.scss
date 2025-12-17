@@ -1,0 +1,23 @@
+.progress-bar {
+  width: 100%;
+  height: 16px; /* ارتفاع */
+  border-radius: 9999px; /* rounded-3xl */
+  overflow: hidden;
+  appearance: none; /* remove default style */
+}
+
+/* Chrome, Safari, Opera */
+.progress-bar::-webkit-progress-bar {
+  background-color: #e5e7eb; /* Tailwind gray-200 */
+}
+
+.progress-bar::-webkit-progress-value {
+  background-color: #3b82f6; /* Tailwind blue-500 */
+  border-radius: 9999px;
+}
+
+/* Firefox */
+.progress-bar::-moz-progress-bar {
+  background-color: #3b82f6;
+  border-radius: 9999px;
+}

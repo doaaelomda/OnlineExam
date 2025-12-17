@@ -5,10 +5,10 @@ import {
 import {
   SpinnerIcon
 } from "./chunk-7KQFKSFP.js";
+import "./chunk-DTZ2TACP.js";
 import {
   Ripple
 } from "./chunk-435Z2JUO.js";
-import "./chunk-DTZ2TACP.js";
 import {
   DomHandler
 } from "./chunk-BL5C2YTS.js";

@@ -1,0 +1,19 @@
+<section>
+    <div class="py-8 px-4 user-card">
+        <div class="flex items-center justify-between">
+            <h1 class="text-blue text-2xl font-medium">Quizes</h1>
+            <button class="text-blue text-2xl font-medium">View All</button>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        @for(quiz of dashBoardData ;let i=$index;track i){
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+            <img [src]="quiz.icon" alt="{{quiz.name}}" class="w-full h-32 object-cover">
+            <div class="p-4 text-center">
+                <h2 class="font-semibold text-lg">{{ quiz.name }}</h2>
+            </div>
+        </div>
+        }
+    </div>
+</section>

@@ -1,8 +1,5 @@
 import { createRequire } from 'module';const require = createRequire(import.meta.url);
 import {
-  NG_VALUE_ACCESSOR
-} from "./chunk-TBXNJ54Y.js";
-import {
   ConnectedOverlayScrollHandler,
   DomHandler
 } from "./chunk-BL5C2YTS.js";
@@ -14,6 +11,9 @@ import {
   SharedModule,
   zindexutils
 } from "./chunk-6OT62SRX.js";
+import {
+  NG_VALUE_ACCESSOR
+} from "./chunk-TBXNJ54Y.js";
 import {
   animate,
   animation,
@@ -970,4 +970,4 @@ export {
   Overlay,
   OverlayModule
 };
-//# sourceMappingURL=chunk-4IYPIU6F.js.map
+//# sourceMappingURL=chunk-CB277S55.js.map

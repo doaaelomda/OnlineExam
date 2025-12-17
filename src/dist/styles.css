@@ -90,3 +90,57 @@ body {
 .p-tabview-panels {
   display: none;
 }
+
+.menu {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 32px;
+  padding: 8px;
+  font-size: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.menu-item i {
+  font-size: 22px;
+  color: #4461F2;
+}
+
+.menu-item.active {
+  background: #4461F2;
+  color: white;
+  font-weight: 600;
+}
+.menu-item.active i {
+  color: white;
+}
+
+.search-input {
+  background: #FFFFFF;
+  box-shadow: 0px 15px 40px 0px rgba(0, 0, 0, 0.1019607843);
+  padding: 16px;
+  border-radius: 20px;
+}
+
+.user-card {
+  box-shadow: 0px 15px 40px 0px rgba(0, 0, 0, 0.0509803922);
+  border-radius: 20px;
+  background-color: white;
+}
+
+.small-card {
+  box-shadow: 0px 15px 40px 5px #EDEDED;
+  background: #FFFFFF;
+  border-radius: 10px;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

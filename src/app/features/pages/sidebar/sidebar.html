@@ -1,4 +1,22 @@
 <div class="">
-   <img src="images/Final.svg" alt="">
+   <img src="images/Final.svg" alt="" class="mb-14">
+   <div class="list">
+      <ul class="menu text-gray text-xl font-semibold">
+         <li [routerLink]="'dashboard'" class="menu-item " [class.active]="activeItem === 'dashboard'" (click)="activeItem = 'dashboard'">
+            <i class="pi pi-align-justify"></i>
+            Dashboard
+         </li>
 
+         <li [routerLink]="'quizHistory'" class="menu-item " [class.active]="activeItem === 'history'" (click)="activeItem = 'history'">
+            <i class="pi pi-history"></i>
+            Quiz History
+         </li>
+
+         <li class="menu-item " [class.active]="activeItem === 'logout'" (click)="activeItem = 'logout'">
+            <i class="pi pi-arrow-left"></i>
+            Log Out
+         </li>
+      </ul>
+
+   </div>
 </div>

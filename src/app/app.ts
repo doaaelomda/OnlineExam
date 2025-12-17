@@ -1,9 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
+import { AuthInterceptor } from './core/interceptor/onlineexam-interceptor';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,9 @@ import { MessageService } from 'primeng/api';
   ],
   templateUrl: './app.html',
   styleUrls: ['./app.scss'],
-   providers: [MessageService]
+    providers: [
+    MessageService
+  ]
 })
 export class App {
   protected readonly title = signal('onlineExam');

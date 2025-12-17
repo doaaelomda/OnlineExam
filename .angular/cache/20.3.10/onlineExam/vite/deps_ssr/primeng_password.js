@@ -1,19 +1,12 @@
 import { createRequire } from 'module';const require = createRequire(import.meta.url);
 import {
-  InputText,
-  InputTextModule
-} from "./chunk-G2CFAWXG.js";
-import {
-  NG_VALUE_ACCESSOR
-} from "./chunk-TBXNJ54Y.js";
+  TimesIcon
+} from "./chunk-UXEOJS4K.js";
+import "./chunk-YL6IVL5H.js";
 import {
   AutoFocus,
   AutoFocusModule
 } from "./chunk-G5YXFMDZ.js";
-import {
-  TimesIcon
-} from "./chunk-UXEOJS4K.js";
-import "./chunk-YL6IVL5H.js";
 import {
   BaseIcon
 } from "./chunk-DTZ2TACP.js";
@@ -21,6 +14,10 @@ import {
   ConnectedOverlayScrollHandler,
   DomHandler
 } from "./chunk-BL5C2YTS.js";
+import {
+  InputText,
+  InputTextModule
+} from "./chunk-TXJGQTBO.js";
 import {
   OverlayService,
   PrimeNGConfig,
@@ -30,6 +27,9 @@ import {
   UniqueComponentId,
   zindexutils
 } from "./chunk-6OT62SRX.js";
+import {
+  NG_VALUE_ACCESSOR
+} from "./chunk-TBXNJ54Y.js";
 import {
   animate,
   style,

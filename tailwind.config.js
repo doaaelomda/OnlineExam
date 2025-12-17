@@ -10,7 +10,10 @@ module.exports = {
       colors: {
       primary_custom: 'rgba(68, 97, 242, 1)',
       black:'rgba(0, 0, 0, 1)',
-      white:'#FFFFFF'
+      white:'#FFFFFF',
+      gray:'#696F79',
+      blue:'#4461F2',
+      gray_light:'#979CA3'
     },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],

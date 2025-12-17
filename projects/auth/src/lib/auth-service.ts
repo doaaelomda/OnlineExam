@@ -11,12 +11,7 @@ import { authApiAdaptorService } from './adaptor/auth-api-adaptor';
 export class authService implements authApi {
   constructor(private http: HttpClient, private authApiAdaptorService: authApiAdaptorService) {}
   SignIn(data?: any): Observable<any> {
-    return this.http.post(authEndPoint.SignIn, data).pipe(
-      map((res: any) => {
-        this.authApiAdaptorService.adapt(res);
-      }),
-    catchError(error=>of(error))
-    );
+    return this.http.post(authEndPoint.SignIn, data)
   }
 
   signUp(data?: any): Observable<any> {

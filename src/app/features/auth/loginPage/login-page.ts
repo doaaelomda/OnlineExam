@@ -1,5 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
-import { Component, Inject } from '@angular/core';
+import { Component } from '@angular/core';
 import {
   FormBuilder,
   FormControl,
@@ -13,9 +13,8 @@ import { ButtonShared } from '../../../shared/button/button';
 import { InputPassword } from '../../../shared/input-password/input-password';
 import { Router, RouterLink } from '@angular/router';
 import { AuthOnlineService } from '../../../core/services/auth-online-service';
-import { environment } from '../../../environments/environment.';
-import { ToastrService } from 'ngx-toastr';
 import { MessageService } from 'primeng/api';
+import { userResponseLogin } from '../../../core/modal/response';
 @Component({
   selector: 'app-login-page',
   standalone: true,
@@ -28,7 +27,6 @@ import { MessageService } from 'primeng/api';
     RouterLink,
     // AuthModule,
     HttpClientModule,
-    
   ],
   templateUrl: './login-page.html',
   styleUrls: ['./login-page.scss'],
@@ -40,7 +38,7 @@ export class LoginPage {
     private fb: FormBuilder,
     private _AuthOnlineService: AuthOnlineService,
     private messageService: MessageService,
-    private _router:Router
+    private _router: Router
   ) {
     this.initialForm();
   }
@@ -52,35 +50,49 @@ export class LoginPage {
     });
   }
 
-  onSubmit() {
-    if (this.loginForm.invalid) {
-      this.loginForm.markAllAsTouched();
-      return;
-    }
+onSubmit() {
+  if (this.loginForm.invalid) {
+    this.loginForm.markAllAsTouched();
+    return;
+  }
 
-    const payload = { ...this.loginForm.value };
-    this._AuthOnlineService.signInUser(payload).subscribe((res: any) => {
-      debugger;
-      // if (res) {
+  const payload = { ...this.loginForm.value };
+
+  this._AuthOnlineService.SignInUser(payload).subscribe({
+    next: (res: userResponseLogin) => {
+      console.log('login response', res);
+      if (!res || !res.token) {
         this.messageService.add({
-          severity: 'success',
-          summary: 'success',
-          detail: 'user login is done',
+          severity: 'error',
+          summary: 'Error',
+          detail: 'Invalid login response',
           life: 3000,
         });
-               this._router.navigate(['/home'])
-        this.loginForm.reset()
-      // }
-      // else{
-      //   this.messageService.add({
-      //     severity: 'error',
-      //     summary: 'error',
-      //     detail: 'user login is faild',
-      //     life: 3000,
-      //   });
-      //   this.loginForm.reset()
+        return;
+      }
+      localStorage.setItem('token', res.token);
+      localStorage.setItem('user', JSON.stringify(res.user));
+      this.messageService.add({
+        severity: 'success',
+        summary: 'Success',
+        detail: 'User login is done',
+        life: 3000,
+      });
+      this._router.navigate(['/home']);
+      this.loginForm.reset();
+    },
 
-      // }
-    });
-  }
+    error: (err) => {
+      console.error('login error', err);
+
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Error',
+        detail: err?.error?.message || 'Login failed',
+        life: 3000,
+      });
+    }
+  });
+}
+
 }

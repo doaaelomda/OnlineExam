@@ -1,0 +1,27 @@
+.text-blue {
+  color: #1D4ED8; 
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.hover\:shadow-xl:hover {
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.transition-shadow {
+  transition: box-shadow 0.3s ease;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}

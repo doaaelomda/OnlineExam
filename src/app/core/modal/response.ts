@@ -1,5 +1,15 @@
 export interface userResponseLogin {
+  message: string;
   token: string;
-  userId: string;
-  expiresIn: number;
+  user: {
+    _id: string;
+    username: string;
+    firstName: string;
+    lastName: string;
+    email: string;
+    phone: string;
+    role: string;
+    isVerified: boolean;
+    createdAt: string;
+  };
 }
