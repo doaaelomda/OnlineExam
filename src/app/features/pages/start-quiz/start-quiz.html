@@ -30,11 +30,28 @@
                     <p-skeleton height="8rem" borderRadius="16px" />}
                     @else {
                     <span class="time">{{ exam.duration }} Minutes</span>}
-
-                    <button class="start-btn">Start</button>
+                    <button class="start-btn" (click)="openDialog(exam._id)">Start</button>
                 </div>
             </div>
         </div>
 
     </div>
 </section>
+
+<app-start-quiz-dialog
+  [(visible)]="showDialog"
+  (start)="startExam()"
+></app-start-quiz-dialog>
+
+<app-quiz-question
+  [(visible)]="showQuizModal"
+  [questionText]="'Exercitationem pariatur quae facere vel id est illo velit aut.'"
+  [options]="currentQuestionOptions"
+  [currentQuestion]="currentIndex + 1"
+  [totalQuestions]="totalQuestions"
+  [timeRemaining]="timerDisplay"
+  [selectedOption]="selectedAnswer"
+  (optionSelect)="onSelectAnswer($event)"
+  (next)="goNext()"
+  (back)="goBack()"
+></app-quiz-question>

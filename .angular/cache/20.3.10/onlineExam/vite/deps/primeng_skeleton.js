@@ -2,7 +2,7 @@ import {
   CommonModule,
   NgClass,
   NgStyle
-} from "./chunk-MWNNPGXY.js";
+} from "./chunk-25NVM3RJ.js";
 import "./chunk-APPCZKFW.js";
 import {
   ChangeDetectionStrategy,
@@ -10,8 +10,6 @@ import {
   Input,
   NgModule,
   ViewEncapsulation,
-  __spreadProps,
-  __spreadValues,
   setClassMetadata,
   ɵɵattribute,
   ɵɵclassMap,
@@ -20,7 +18,11 @@ import {
   ɵɵdefineNgModule,
   ɵɵelement,
   ɵɵproperty
-} from "./chunk-PNR43QNA.js";
+} from "./chunk-N7GIAB45.js";
+import {
+  __spreadProps,
+  __spreadValues
+} from "./chunk-PJVWDKLX.js";
 
 // node_modules/primeng/fesm2022/primeng-skeleton.mjs
 var Skeleton = class _Skeleton {

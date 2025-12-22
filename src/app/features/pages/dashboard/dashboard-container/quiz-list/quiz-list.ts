@@ -11,7 +11,7 @@ export class QuizList implements OnInit {
   dashBoardData:any[]=[]
   constructor(private DashBoard:DashBoard){}
   ngOnInit(){
-    debugger
+    
     this.DashBoard.getsubjects().subscribe((res:any)=>{
       this.dashBoardData=res?.subjects
     })

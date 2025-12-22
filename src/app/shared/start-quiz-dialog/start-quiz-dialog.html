@@ -1,0 +1,25 @@
+<p-dialog
+  [(visible)]="visible"
+  modal="true"
+  [style]="{ width: '600px' }"
+  [contentStyle]="{ padding: '24px' }"
+  [closable]="false"
+>
+
+<h1  class="black_light font-medium text-2xl mb-2">Instructions</h1>
+  <ul class="black_dark font-medium text-xl mb-12">
+    <li>• Lorem ipsum dolor sit amet consectetur.</li>
+    <li>• Lorem ipsum dolor sit amet consectetur.</li>
+    <li>• Lorem ipsum dolor sit amet consectetur.</li>
+    <li>• Lorem ipsum dolor sit amet consectetur.</li>
+  </ul>
+
+  <ng-template pTemplate="footer">
+    <button
+      pButton
+      label="Start"
+      class="w-full p-button-rounded bg-blue text-white text-[16px] py-2.5 px-6"
+      (click)="startQuiz()"
+    ></button>
+  </ng-template>
+</p-dialog>
