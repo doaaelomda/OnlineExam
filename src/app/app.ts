@@ -18,7 +18,8 @@ import { AuthInterceptor } from './core/interceptor/onlineexam-interceptor';
   templateUrl: './app.html',
   styleUrls: ['./app.scss'],
     providers: [
-    MessageService
+    MessageService,
+    
   ]
 })
 export class App {

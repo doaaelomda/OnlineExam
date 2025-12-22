@@ -8,6 +8,7 @@ import { SetPassword } from './set-password/set-password';
 import { HomePage } from '../pages/home-page/home-page';
 import { Dashboard } from '../pages/dashboard/dashboard';
 import { QuizHistory } from '../pages/quiz-history/quiz-history';
+import { StartQuiz } from '../pages/start-quiz/start-quiz';
 
 export const routesLogin: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -26,8 +27,11 @@ export const routesLogin: Routes = [
     path: 'home',
     component: HomePage,
     children: [
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: Dashboard },
       { path: 'quizHistory', component: QuizHistory },
+      {path:'startQuiz' ,component:StartQuiz}
     ],
   },
+  
 ];

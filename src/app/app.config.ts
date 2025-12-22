@@ -6,7 +6,8 @@ import { routes } from './app.routes';
 import { provideBrowserGlobalErrorListeners, provideZonelessChangeDetection } from '@angular/core';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { MessageService } from 'primeng/api';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { AuthInterceptor } from './core/interceptor/onlineexam-interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -16,7 +17,9 @@ export const appConfig: ApplicationConfig = {
     provideClientHydration(withEventReplay()),
     provideAnimations(),
     provideToastr({ positionClass: 'toast-top-right', timeOut: 3000 }),
-    provideHttpClient(),
+    provideHttpClient(
+      withInterceptors([AuthInterceptor]) 
+    ),
     MessageService,
   ],
 };
