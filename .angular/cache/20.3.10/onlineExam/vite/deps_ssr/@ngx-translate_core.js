@@ -9,6 +9,7 @@ import {
   NgModule,
   Pipe,
   inject,
+  require_cjs,
   require_operators,
   setClassMetadata,
   ɵɵdefineDirective,
@@ -17,10 +18,7 @@ import {
   ɵɵdefineNgModule,
   ɵɵdefinePipe,
   ɵɵgetInheritedFactory
-} from "./chunk-46ITGDXS.js";
-import {
-  require_cjs
-} from "./chunk-O5J3CNTX.js";
+} from "./chunk-G2SETQIJ.js";
 import {
   __spreadValues,
   __toESM

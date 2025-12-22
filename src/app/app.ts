@@ -23,4 +23,6 @@ import { AuthInterceptor } from './core/interceptor/onlineexam-interceptor';
 })
 export class App {
   protected readonly title = signal('onlineExam');
+  inCrement(){}
+  deCrement(){}
 }

@@ -10,8 +10,8 @@ import {
 import {
   BrowserModule,
   DomRendererFactory2
-} from "./chunk-YFGKRZQW.js";
-import "./chunk-25NVM3RJ.js";
+} from "./chunk-XVNF2FB5.js";
+import "./chunk-ZXPRPMA6.js";
 import "./chunk-APPCZKFW.js";
 import {
   ANIMATION_MODULE_TYPE,
@@ -22,17 +22,15 @@ import {
   NgZone,
   RendererFactory2,
   RuntimeError,
+  __objRest,
+  __spreadValues,
   performanceMarkFeature,
   setClassMetadata,
   ɵɵdefineInjectable,
   ɵɵdefineInjector,
   ɵɵdefineNgModule,
   ɵɵinject
-} from "./chunk-N7GIAB45.js";
-import {
-  __objRest,
-  __spreadValues
-} from "./chunk-PJVWDKLX.js";
+} from "./chunk-5FACTHDT.js";
 
 // node_modules/@angular/animations/fesm2022/util.mjs
 var LINE_START = "\n - ";

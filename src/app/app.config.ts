@@ -7,6 +7,9 @@ import { provideBrowserGlobalErrorListeners, provideZonelessChangeDetection } fr
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { MessageService } from 'primeng/api';
 import { provideHttpClient } from '@angular/common/http';
+import {provideStore} from '@ngrx/store'
+import {provideEffects} from '@ngrx/effects'
+import { counterReducer } from './store/counter/counter.reducer';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -18,5 +21,9 @@ export const appConfig: ApplicationConfig = {
     provideToastr({ positionClass: 'toast-top-right', timeOut: 3000 }),
     provideHttpClient(),
     MessageService,
+    provideStore({
+      elevateCounter:counterReducer
+    }),
+    provideEffects()
   ],
 };
