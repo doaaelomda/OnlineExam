@@ -86,7 +86,9 @@ export class StartQuizComponent implements OnInit, OnDestroy {
   }
 
  startExam() {
+  debugger
   this.showDialog = false;
+  this.showQuizModal = true;
 
   // this._quiz.getExamById(this.selectedExamId).subscribe({
   //   next: (res: any) => {

@@ -1,6 +1,7 @@
 :host {
   display: block;
 }
-::ng-deep .p-dialog-header{
+
+::ng-deep .p-dialog-header {
   display: none;
 }

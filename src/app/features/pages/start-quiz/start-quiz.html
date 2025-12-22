@@ -45,13 +45,4 @@
 
 <app-quiz-question
   [(visible)]="showQuizModal"
-  [questionText]="'Exercitationem pariatur quae facere vel id est illo velit aut.'"
-  [options]="currentQuestionOptions"
-  [currentQuestion]="currentIndex + 1"
-  [totalQuestions]="totalQuestions"
-  [timeRemaining]="timerDisplay"
-  [selectedOption]="selectedAnswer"
-  (optionSelect)="onSelectAnswer($event)"
-  (next)="goNext()"
-  (back)="goBack()"
 ></app-quiz-question>
