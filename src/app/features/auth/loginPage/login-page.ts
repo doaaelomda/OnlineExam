@@ -60,7 +60,6 @@ onSubmit() {
 
   this._AuthOnlineService.SignInUser(payload).subscribe({
     next: (res: userResponseLogin) => {
-      console.log('login response', res);
       if (!res || !res.token) {
         this.messageService.add({
           severity: 'error',

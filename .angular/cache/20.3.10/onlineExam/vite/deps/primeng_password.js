@@ -1,6 +1,7 @@
 import {
   TimesIcon
 } from "./chunk-ZCLVHGOA.js";
+import "./chunk-D272CXXL.js";
 import {
   AutoFocus,
   AutoFocusModule
@@ -9,7 +10,6 @@ import {
   InputText,
   InputTextModule
 } from "./chunk-CZ7MKKB6.js";
-import "./chunk-D272CXXL.js";
 import {
   BaseIcon
 } from "./chunk-LICKINTF.js";

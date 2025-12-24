@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { DashBoard } from '../../../../../core/services/dash-board';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 @Component({
   selector: 'app-quiz-list',
-  imports: [],
+  imports: [ProgressSpinnerModule],
   templateUrl: './quiz-list.html',
   styleUrl: './quiz-list.scss',
 })

@@ -13,6 +13,6 @@ export class Quiz {
   }
 
   getExamById(id:string){
-    return this.http.get(`${environment.apiUrl}/exams/${id}`);
+    return this.http.get(`${environment.apiUrl}/questions?exam=${id}`);
   }
 }

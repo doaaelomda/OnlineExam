@@ -26,9 +26,7 @@ export class VerifyCode {
      onSubmit() {
     if (this.codeForm.invalid) {
       this.codeForm.markAllAsTouched()
-      console.log('Form Data:', this.codeForm.value);
     } else {
-      console.log('Form Invalid');
        this._router.navigate(['/setPassword']);
     }
   }

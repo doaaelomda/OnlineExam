@@ -4,7 +4,7 @@ import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
 export interface QuizOption {
   text: string;
-  selected?: boolean;
+  key: string;
 }
 
 @Component({
@@ -22,21 +22,21 @@ export interface QuizOption {
 export class QuizQuestionComponent {
   @Input() visible: boolean = false;
   @Output() visibleChange = new EventEmitter<boolean>();
-  @Input() questionText: string = '';
-  @Input() options: QuizOption[] = [];
+  @Input() questionText: any = '';
+  @Input() options: any;
   @Input() currentQuestion: number = 1;
   @Input() totalQuestions: number = 20;
-  @Input() timeRemaining: string = '00:00'; 
-  @Input() selectedOption: string | null = null;
+  @Input() timeRemaining: any = '00:00'; 
+  selectedOption: string | null = null;
 
   @Output() optionSelect = new EventEmitter<string>();
   @Output() next = new EventEmitter<void>();
   @Output() back = new EventEmitter<void>();
 
-  onOptionChange(value: string) {
-    this.optionSelect.emit(value);
-  }
-
+  onOptionChange(optionKey: string) {
+  this.optionSelect.emit(optionKey);
+  this.selectedOption = optionKey;
+}
   onNext() {
     this.next.emit();
   }

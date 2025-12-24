@@ -7,7 +7,7 @@ import { HeaderDashboard } from '../dashboard/dashboard-container/header-dashboa
 import { StartQuizDialogComponent } from '../../../shared/start-quiz-dialog/start-quiz-dialog';
 import { QuizQuestionComponent } from '../../../shared/quiz-question/quiz-question';
 import { Quiz } from '../../../core/services/quiz';
-
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 interface Exam {
   _id: string;
   title: string;
@@ -17,8 +17,10 @@ interface Exam {
 
 interface Question {
   text: string;
-  options: string[];
-  correctAnswer?: string; // optional if you have it
+  answers: {
+    text: string;
+    key: string;
+  }[];
 }
 
 @Component({
@@ -31,6 +33,7 @@ interface Question {
     HeaderDashboard,
     StartQuizDialogComponent,
     QuizQuestionComponent,
+    ProgressSpinnerModule,
   ],
   templateUrl: './start-quiz.html',
   styleUrls: ['./start-quiz.scss'],
@@ -61,6 +64,7 @@ export class StartQuizComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.getExams();
+    this.startTimer();
   }
 
   ngOnDestroy() {
@@ -71,7 +75,7 @@ export class StartQuizComponent implements OnInit, OnDestroy {
     this.loading = true;
     this._quiz.getExams().subscribe({
       next: (res: any) => {
-        this.exams = res?.exams || [];
+        this.exams = res?.exams;
         this.loading = false;
       },
       error: () => {
@@ -85,36 +89,33 @@ export class StartQuizComponent implements OnInit, OnDestroy {
     this.showDialog = true;
   }
 
- startExam() {
-  debugger
-  this.showDialog = false;
-  this.showQuizModal = true;
+  startExam() {
+    this.showDialog = false;
+    this._quiz.getExamById(this.selectedExamId).subscribe({
+      next: (res: any) => {
+        const examData = res;
+        this.questions = examData?.questions?.map((q: any) => ({
+          text: q.question,
+          answers: q.answers.map((a: any) => ({
+            text: a.answer,
+          key: a.key,
+          })),
+        }));
 
-  // this._quiz.getExamById(this.selectedExamId).subscribe({
-  //   next: (res: any) => {
-  //     const examData = res?.exam;
+        this.totalQuestions = this.questions.length;
+        this.answers = new Array(this.totalQuestions).fill(null);
 
-  //     this.questions = examData.questions.map((q: any) => ({
-  //       text: q.text || q.question,
-  //       options: q.options,
-  //     }));
+        this.currentIndex = 0;
+        this.selectedAnswer = null;
 
-  //     this.totalQuestions = this.questions.length;
-  //     this.timeRemainingInSeconds = examData.duration * 60;
-  //     this.answers = new Array(this.totalQuestions).fill(null);
+        this.timeRemainingInSeconds = examData?.exam?.duration * 60;
+        this.updateTimerDisplay();
+        this.startTimer();
 
-  //     this.currentIndex = 0;
-  //     this.selectedAnswer = null;
-
-  //     // 🔥 هنا بقى
-  //     this.showQuizModal = true;
-
-  //     this.startTimer();
-  //     this.updateTimerDisplay();
-  //   },
-  // });
-}
-
+        this.showQuizModal = true;
+      },
+    });
+  }
 
   // Timer logic
   startTimer() {
@@ -142,9 +143,9 @@ export class StartQuizComponent implements OnInit, OnDestroy {
   }
 
   // Quiz navigation & answers
-  onSelectAnswer(answer: string) {
-    this.selectedAnswer = answer;
-    this.answers[this.currentIndex] = answer;
+  onSelectAnswer(answerKey: string) {
+    this.selectedAnswer = answerKey;
+    this.answers[this.currentIndex] = answerKey;
   }
 
   goNext() {
@@ -164,17 +165,9 @@ export class StartQuizComponent implements OnInit, OnDestroy {
   submitQuiz() {
     this.stopTimer();
     this.isTakingQuiz = false;
-    console.log('Quiz Submitted!', {
-      examId: this.selectedExamId,
-      answers: this.answers,
-    });
-    // Here you can send answers to backend
-    alert('Quiz submitted successfully!');
   }
 
-  get currentQuestionOptions() {
-    return this.questions[this.currentIndex]?.options.map((opt: string) => ({
-      text: opt,
-    })) || [];
+  get currentQuestionAnswers() {
+    return this.questions[this.currentIndex]?.answers || [];
   }
 }

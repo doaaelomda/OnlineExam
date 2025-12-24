@@ -27,9 +27,7 @@ export class ForgetPassword {
     onSubmit() {
     if (this.loginForm.invalid) {
       this.loginForm.markAllAsTouched()
-      console.log('Form Data:', this.loginForm.value);
     } else {
-      console.log('Form Invalid');
        this._router.navigate(['/verifyCode']);
     }
   }

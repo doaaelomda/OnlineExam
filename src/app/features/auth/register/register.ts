@@ -43,7 +43,6 @@ export class Register {
   onSubmit() {
     
     if (this.registerForm.invalid) {
-      console.log('Form Data:', this.registerForm.value);
       this.registerForm.markAllAsTouched();
       return;
     } else {

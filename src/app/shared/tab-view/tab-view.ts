@@ -22,7 +22,6 @@ export class TabView {
 
   selectedLanguage = { label: 'English', value: 'en' };
   onLanguageChange() {
-    console.log('Language changed to:', this.selectedLanguage.value);
   }
 
 }

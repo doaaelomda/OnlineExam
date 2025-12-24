@@ -28,9 +28,7 @@ export class SetPassword {
 
   onSubmit() {
     if (this.psswordForm.valid) {
-      console.log('Form Data:', this.psswordForm.value);
     } else {
-      console.log('Form Invalid');
     }
   }
 }

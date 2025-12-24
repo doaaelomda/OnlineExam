@@ -5,9 +5,9 @@ import {
 import {
   TimesIcon
 } from "./chunk-ZCLVHGOA.js";
+import "./chunk-D272CXXL.js";
 import "./chunk-Z3VS7M3X.js";
 import "./chunk-UKISCRGF.js";
-import "./chunk-D272CXXL.js";
 import {
   Ripple,
   RippleModule

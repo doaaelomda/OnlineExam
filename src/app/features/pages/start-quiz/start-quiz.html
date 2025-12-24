@@ -3,6 +3,7 @@
     <div class="mt-10">
         <h1 class="text-black_light font-medium text-[18px]  mb-6">Front-End Quiz</h1>
         <div class="cards-container">
+            @if(exams.length>0){
             <div class="card" *ngFor="let exam of exams">
                 <div class="card-left">
                     @if (loading) {
@@ -33,6 +34,10 @@
                     <button class="start-btn" (click)="openDialog(exam._id)">Start</button>
                 </div>
             </div>
+        }
+        @else {
+            <p-progressSpinner class="m-auto" ariaLabel="loading" />
+        }
         </div>
 
     </div>
@@ -45,4 +50,12 @@
 
 <app-quiz-question
   [(visible)]="showQuizModal"
+  [questionText]="questions[currentIndex]?.text"
+  [options]="questions[currentIndex]?.answers"
+  [currentQuestion]="currentIndex + 1"
+  [totalQuestions]="totalQuestions"
+  [timeRemaining]="timeRemainingInSeconds"
+  (optionSelect)="onSelectAnswer($event)"
+  (next)="goNext()"
+  (back)="goBack()"
 ></app-quiz-question>

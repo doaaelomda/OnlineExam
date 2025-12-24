@@ -14,7 +14,7 @@
 
          <li class="menu-item " [class.active]="activeItem === 'logout'" (click)="activeItem = 'logout'">
             <i class="pi pi-arrow-left"></i>
-            Log Out
+            <button (click)="logout()">Log Out</button>
          </li>
       </ul>
 
