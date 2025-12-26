@@ -15,6 +15,9 @@ export class StartQuizDialogComponent {
   @Output() visibleChange = new EventEmitter<boolean>();
   @Output() start = new EventEmitter<void>();
 
+  constructor(){
+    this.startQuiz()
+  }
   close() {
     this.visible = false;
     this.visibleChange.emit(false);

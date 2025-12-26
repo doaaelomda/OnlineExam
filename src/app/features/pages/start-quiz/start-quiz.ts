@@ -64,7 +64,6 @@ export class StartQuizComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.getExams();
-    this.startTimer();
   }
 
   ngOnDestroy() {
@@ -90,7 +89,6 @@ export class StartQuizComponent implements OnInit, OnDestroy {
   }
 
   startExam() {
-    this.showDialog = false;
     this._quiz.getExamById(this.selectedExamId).subscribe({
       next: (res: any) => {
         const examData = res;
@@ -111,24 +109,27 @@ export class StartQuizComponent implements OnInit, OnDestroy {
         this.timeRemainingInSeconds = examData?.exam?.duration * 60;
         this.updateTimerDisplay();
         this.startTimer();
-
         this.showQuizModal = true;
+        this.showDialog = false;
       },
     });
   }
 
   // Timer logic
-  startTimer() {
-    this.timerSubscription = interval(1000).subscribe(() => {
-      if (this.timeRemainingInSeconds > 0) {
-        this.timeRemainingInSeconds--;
-        this.updateTimerDisplay();
-      } else {
-        this.stopTimer();
-        this.submitQuiz(); // auto submit when time ends
-      }
-    });
-  }
+startTimer() {
+  if (this.timerSubscription) return;
+
+  this.timerSubscription = interval(1000).subscribe(() => {
+    if (this.timeRemainingInSeconds > 0) {
+      this.timeRemainingInSeconds--;
+      this.updateTimerDisplay();
+    } else {
+      this.stopTimer();
+      this.submitQuiz();
+    }
+  });
+}
+
 
   stopTimer() {
     this.timerSubscription?.unsubscribe();

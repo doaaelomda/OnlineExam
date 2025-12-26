@@ -4,7 +4,8 @@
         <h1 class="text-black_light font-medium text-[18px]  mb-6">Front-End Quiz</h1>
         <div class="cards-container">
             @if(exams.length>0){
-            <div class="card" *ngFor="let exam of exams">
+            @for(exam of exams;track exam;){
+            <div class="card">
                 <div class="card-left">
                     @if (loading) {
                     <p-skeleton height="8rem" borderRadius="16px" />}
@@ -34,28 +35,19 @@
                     <button class="start-btn" (click)="openDialog(exam._id)">Start</button>
                 </div>
             </div>
-        }
-        @else {
+            }
+            }
+            @else {
             <p-progressSpinner class="m-auto" ariaLabel="loading" />
-        }
+            }
         </div>
 
     </div>
 </section>
 
-<app-start-quiz-dialog
-  [(visible)]="showDialog"
-  (start)="startExam()"
-></app-start-quiz-dialog>
+<app-start-quiz-dialog [(visible)]="showDialog" (start)="startExam()"></app-start-quiz-dialog>
 
-<app-quiz-question
-  [(visible)]="showQuizModal"
-  [questionText]="questions[currentIndex]?.text"
-  [options]="questions[currentIndex]?.answers"
-  [currentQuestion]="currentIndex + 1"
-  [totalQuestions]="totalQuestions"
-  [timeRemaining]="timeRemainingInSeconds"
-  (optionSelect)="onSelectAnswer($event)"
-  (next)="goNext()"
-  (back)="goBack()"
-></app-quiz-question>
+<app-quiz-question [(visible)]="showQuizModal" [questionText]="questions[currentIndex]?.text"
+    [options]="questions[currentIndex]?.answers" [currentQuestion]="currentIndex + 1" [totalQuestions]="totalQuestions"
+    [timeRemaining]="timeRemainingInSeconds" (optionSelect)="onSelectAnswer($event)" (next)="goNext()"
+    (back)="goBack()"></app-quiz-question>
