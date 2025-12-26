@@ -6,10 +6,6 @@ import {
   DomHandler
 } from "./chunk-477CUFCP.js";
 import {
-  PrimeTemplate,
-  SharedModule
-} from "./chunk-S5U7AIZP.js";
-import {
   CommonModule,
   NgClass,
   NgForOf,
@@ -18,6 +14,10 @@ import {
   NgTemplateOutlet,
   isPlatformBrowser
 } from "./chunk-RAN24RGN.js";
+import {
+  PrimeTemplate,
+  SharedModule
+} from "./chunk-S5U7AIZP.js";
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
@@ -1567,4 +1567,4 @@ export {
   Scroller,
   ScrollerModule
 };
-//# sourceMappingURL=chunk-SQAEPGBL.js.map
+//# sourceMappingURL=chunk-M6JC3W2W.js.map

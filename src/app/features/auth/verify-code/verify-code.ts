@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { ButtonShared } from '../../../shared/button/button';
-// import { InputOtpModule } from 'primeng/inputotp';
+import { InputOtpModule } from 'primeng/inputotp';
+import { AuthOnlineService } from '../../../core/services/auth-online-service';
 
 @Component({
   selector: 'app-verify-code',
-  imports: [ReactiveFormsModule,RouterLink,ButtonShared],
+  imports: [ReactiveFormsModule,RouterLink,ButtonShared,InputOtpModule],
   templateUrl: './verify-code.html',
   styleUrl: './verify-code.scss',
 })
@@ -17,9 +18,9 @@ export class VerifyCode {
   { key: 'required', message: 'This field is required' },
 ];
 
-  constructor(private fb: FormBuilder,private _router:Router) {
+  constructor(private fb: FormBuilder,private _router:Router,private AuthOnlineService:AuthOnlineService) {
     this.codeForm = this.fb.group({
-      otp: new FormControl('', [Validators.required]),
+      resetCode: new FormControl('', [Validators.required]),
     });
   }
 
@@ -27,7 +28,10 @@ export class VerifyCode {
     if (this.codeForm.invalid) {
       this.codeForm.markAllAsTouched()
     } else {
-       this._router.navigate(['/setPassword']);
+      const payload={... this.codeForm.value}
+      // this.AuthOnlineService.verifyResetCode(payload).subscribe((res)=>{
+      this._router.navigate(['/setPassword']);
+      // })
     }
   }
 

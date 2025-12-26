@@ -24,4 +24,17 @@ export class AuthOnlineService {
   logoutUser(){
     return this.http.get(environment.apiUrl + '/auth/logout')
   }
+
+  sendOtp(email:string){
+    return this.http.post(environment.apiUrl + '/auth/forgotPassword' , email)
+  }
+
+    verifyResetCode(resetCode:string){
+    return this.http.post(environment.apiUrl + '/auth/verifyResetCode' , resetCode)
+  }
+
+  resetPassword(data:[]){
+    return this.http.put(environment.apiUrl + '/auth/resetPassword' ,data)
+  }
+
 }

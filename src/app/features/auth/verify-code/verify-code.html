@@ -1,11 +1,12 @@
 <section class="centered-form">
-  <p class="header_form">Verify Otp</p>
+  <p class="header_form my-2">Verify Otp</p>
 
 <form [formGroup]="codeForm" (ngSubmit)="onSubmit()">
   <div class="form-group py-8">
-    <p-inputOtp formControlName="otp" />
+    <p-inputOtp formControlName="resetCode"></p-inputOtp>
   </div>
 </form>
+
 
 
     <div class="mb-10 text-end">
@@ -13,10 +14,10 @@
   </div>
   <app-button [disabled]="!codeForm.valid" (click)="onSubmit()" [title]="'Verify Code'"></app-button>
 
-  <div class="center_border my-8 gap-3">
-    <div class="border"></div>
-    <p>Or Continue with</p>
-    <div class="border"></div>
+  <div class="center_border my-3 gap-3">
+      <div class="border text-[#E7E7E7]"></div>
+    <p class="text-[#6C737F]">Or Continue with</p>
+    <div class="border text-[#E7E7E7]"></div>
   </div>
 
   <div class="center_border gap-3">

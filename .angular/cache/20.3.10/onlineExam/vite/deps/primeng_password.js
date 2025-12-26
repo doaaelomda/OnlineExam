@@ -1,18 +1,18 @@
 import {
   TimesIcon
 } from "./chunk-ZCLVHGOA.js";
-import "./chunk-D272CXXL.js";
 import {
-  AutoFocus,
-  AutoFocusModule
-} from "./chunk-Z3VS7M3X.js";
+  BaseIcon
+} from "./chunk-LICKINTF.js";
+import "./chunk-D272CXXL.js";
 import {
   InputText,
   InputTextModule
 } from "./chunk-CZ7MKKB6.js";
 import {
-  BaseIcon
-} from "./chunk-LICKINTF.js";
+  AutoFocus,
+  AutoFocusModule
+} from "./chunk-Z3VS7M3X.js";
 import {
   ConnectedOverlayScrollHandler,
   DomHandler

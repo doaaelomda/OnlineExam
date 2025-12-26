@@ -4,7 +4,6 @@ import {
 import {
   TimesIcon
 } from "./chunk-ZCLVHGOA.js";
-import "./chunk-D272CXXL.js";
 import {
   Ripple,
   RippleModule
@@ -12,6 +11,7 @@ import {
 import {
   BaseIcon
 } from "./chunk-LICKINTF.js";
+import "./chunk-D272CXXL.js";
 import {
   DomHandler
 } from "./chunk-3YMO6CU6.js";

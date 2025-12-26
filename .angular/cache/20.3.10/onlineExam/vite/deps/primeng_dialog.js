@@ -1,12 +1,10 @@
 import {
   ButtonDirective,
   ButtonModule
-} from "./chunk-MASOXQ25.js";
+} from "./chunk-ICXL4XWW.js";
 import {
   TimesIcon
 } from "./chunk-ZCLVHGOA.js";
-import "./chunk-D272CXXL.js";
-import "./chunk-Z3VS7M3X.js";
 import "./chunk-UKISCRGF.js";
 import {
   Ripple,
@@ -15,6 +13,8 @@ import {
 import {
   BaseIcon
 } from "./chunk-LICKINTF.js";
+import "./chunk-D272CXXL.js";
+import "./chunk-Z3VS7M3X.js";
 import {
   DomHandler
 } from "./chunk-3YMO6CU6.js";

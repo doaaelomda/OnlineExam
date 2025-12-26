@@ -1,17 +1,5 @@
 import { createRequire } from 'module';const require = createRequire(import.meta.url);
 import {
-  ConnectedOverlayScrollHandler,
-  DomHandler
-} from "./chunk-477CUFCP.js";
-import {
-  ObjectUtils,
-  OverlayService,
-  PrimeNGConfig,
-  PrimeTemplate,
-  SharedModule,
-  zindexutils
-} from "./chunk-S5U7AIZP.js";
-import {
   animate,
   animation,
   style,
@@ -23,6 +11,10 @@ import {
   NG_VALUE_ACCESSOR
 } from "./chunk-TBXNJ54Y.js";
 import {
+  ConnectedOverlayScrollHandler,
+  DomHandler
+} from "./chunk-477CUFCP.js";
+import {
   CommonModule,
   NgClass,
   NgIf,
@@ -30,6 +22,14 @@ import {
   NgTemplateOutlet,
   isPlatformBrowser
 } from "./chunk-RAN24RGN.js";
+import {
+  ObjectUtils,
+  OverlayService,
+  PrimeNGConfig,
+  PrimeTemplate,
+  SharedModule,
+  zindexutils
+} from "./chunk-S5U7AIZP.js";
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
@@ -970,4 +970,4 @@ export {
   Overlay,
   OverlayModule
 };
-//# sourceMappingURL=chunk-DSMVR6NJ.js.map
+//# sourceMappingURL=chunk-6MNAYF2E.js.map

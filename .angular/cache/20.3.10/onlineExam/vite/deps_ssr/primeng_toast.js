@@ -7,25 +7,6 @@ import {
 } from "./chunk-RJCJDEPY.js";
 import "./chunk-YL6IVL5H.js";
 import {
-  Ripple,
-  RippleModule
-} from "./chunk-6COPPSUL.js";
-import {
-  BaseIcon
-} from "./chunk-ZSWKAGP2.js";
-import {
-  DomHandler
-} from "./chunk-477CUFCP.js";
-import {
-  MessageService,
-  ObjectUtils,
-  PrimeNGConfig,
-  PrimeTemplate,
-  SharedModule,
-  UniqueComponentId,
-  zindexutils
-} from "./chunk-S5U7AIZP.js";
-import {
   animate,
   animateChild,
   query,
@@ -35,6 +16,16 @@ import {
   trigger
 } from "./chunk-3MTHALEB.js";
 import {
+  BaseIcon
+} from "./chunk-ZSWKAGP2.js";
+import {
+  Ripple,
+  RippleModule
+} from "./chunk-URDAG53U.js";
+import {
+  DomHandler
+} from "./chunk-477CUFCP.js";
+import {
   CommonModule,
   NgClass,
   NgForOf,
@@ -43,6 +34,15 @@ import {
   NgTemplateOutlet
 } from "./chunk-RAN24RGN.js";
 import "./chunk-E7QG5Y6X.js";
+import {
+  MessageService,
+  ObjectUtils,
+  PrimeNGConfig,
+  PrimeTemplate,
+  SharedModule,
+  UniqueComponentId,
+  zindexutils
+} from "./chunk-S5U7AIZP.js";
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,

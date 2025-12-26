@@ -2,25 +2,20 @@ import { createRequire } from 'module';const require = createRequire(import.meta
 import {
   Tooltip,
   TooltipModule
-} from "./chunk-D65CFMYB.js";
+} from "./chunk-4ATPVATE.js";
 import {
   TimesIcon
 } from "./chunk-RJCJDEPY.js";
 import {
-  Ripple,
-  RippleModule
-} from "./chunk-6COPPSUL.js";
-import {
   BaseIcon
 } from "./chunk-ZSWKAGP2.js";
 import {
+  Ripple,
+  RippleModule
+} from "./chunk-URDAG53U.js";
+import {
   DomHandler
 } from "./chunk-477CUFCP.js";
-import {
-  PrimeTemplate,
-  SharedModule,
-  UniqueComponentId
-} from "./chunk-S5U7AIZP.js";
 import {
   CommonModule,
   NgClass,
@@ -31,6 +26,11 @@ import {
   isPlatformBrowser
 } from "./chunk-RAN24RGN.js";
 import "./chunk-E7QG5Y6X.js";
+import {
+  PrimeTemplate,
+  SharedModule,
+  UniqueComponentId
+} from "./chunk-S5U7AIZP.js";
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,

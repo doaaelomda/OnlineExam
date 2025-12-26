@@ -1,14 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { InputText } from '../../../shared/input-text/input-text';
 import { CommonModule } from '@angular/common';
 import { ButtonShared } from '../../../shared/button/button';
 import { InputPassword } from '../../../shared/input-password/input-password';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { AuthOnlineService } from '../../../core/services/auth-online-service';
+import { InputText } from "../../../shared/input-text/input-text";
 
 @Component({
   selector: 'app-set-password',
-  imports: [ReactiveFormsModule,CommonModule,ButtonShared,InputPassword,RouterLink],
+  imports: [ReactiveFormsModule, CommonModule, ButtonShared, InputPassword, RouterLink, InputText],
   templateUrl: './set-password.html',
   styleUrl: './set-password.scss',
 })
@@ -19,16 +20,22 @@ export class SetPassword {
   { key: 'required', message: 'This field is required' },
 ];
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,private _AuthOnlineService:AuthOnlineService,private _router :Router) {
     this.psswordForm = this.fb.group({
-      passwordConfirm: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('',[Validators.required]),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      newPassword: new FormControl('',[Validators.required]),
     });
   }
 
   onSubmit() {
-    if (this.psswordForm.valid) {
+    debugger
+    if (this.psswordForm.invalid) {
+      this.psswordForm.markAllAsTouched()
     } else {
+      const payload={...this.psswordForm.value}
+      this._AuthOnlineService.resetPassword(payload).subscribe((res:any)=>{
+        this._router.navigate(['/login']);
+      })
     }
   }
 }

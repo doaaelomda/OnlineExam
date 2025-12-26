@@ -1,26 +1,17 @@
- <p-tabView>
-      <p-tabPanel>
-        <ng-template pTemplate="header">
-          <div class="flex items-center gap-2">
-            <p-dropdown
-              [options]="languages"
-              [(ngModel)]="selectedLanguage"
-              optionLabel="label"
-              class="w-28"
-              (click)="$event.stopPropagation()"
-            ></p-dropdown>
-            <span [routerLink]="'/login'" class="tab-title">Sign in</span>
-          </div>
-        </ng-template>
-        <!-- <app-login-page></app-login-page> -->
-      </p-tabPanel>
+<div class="auth-header my-3">
 
-      <p-tabPanel>
-        <ng-template pTemplate="header">
-          <div class="flex items-center">
-            <span [routerLink]="'/register'" class="tab-title">Register</span>
-          </div>
-        </ng-template>
-        <!-- <app-register></app-register> -->
-      </p-tabPanel>
-    </p-tabView>
+  <div class="lang-select text-black text-2xl font-normal">
+    English
+    <i class="pi pi-chevron-down"></i>
+  </div>
+
+  <p-tabView
+    styleClass="auth-tabs"
+    [(activeIndex)]="activeIndex"
+    (onChange)="onTabChange($event)"
+  >
+    <p-tabPanel header="Sign in"></p-tabPanel>
+    <p-tabPanel header="Register"></p-tabPanel>
+  </p-tabView>
+
+</div>

@@ -1,14 +1,14 @@
 import { createRequire } from 'module';const require = createRequire(import.meta.url);
 import {
-  withHttpTransferCache
-} from "./chunk-4PDC6SSV.js";
-import {
   EVENT_MANAGER_PLUGINS,
   EventManagerPlugin
 } from "./chunk-ATACAEYL.js";
 import {
   getDOM
 } from "./chunk-RAN24RGN.js";
+import {
+  withHttpTransferCache
+} from "./chunk-4PDC6SSV.js";
 import {
   ApplicationRef,
   Console,
@@ -836,4 +836,4 @@ export {
    * License: MIT
    *)
 */
-//# sourceMappingURL=chunk-SEUCBOHY.js.map
+//# sourceMappingURL=chunk-MCO26SIC.js.map

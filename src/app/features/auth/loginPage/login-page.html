@@ -8,7 +8,7 @@
     </div>
 
     <div class="form-group mb-3">
-      <app-input-password [controlNameInput]="'password'" [placeholder]="' ********'" [control]="loginForm.get('password')!"
+      <app-input-password [controlNameInput]="'password'" [placeholder]="'password'" [control]="loginForm.get('password')!"
         [Validation]="ValidationRequired"></app-input-password>
     </div>
   </form>
@@ -18,13 +18,13 @@
   </div>
   <app-button (click)="onSubmit()" [title]="'Sign in'"></app-button>
 
-  <div class="center_border my-2 gap-3">
-    <div class="border"></div>
-    <p>Or Continue with</p>
-    <div class="border"></div>
+  <div class="center_border my-3 gap-3">
+      <div class="border text-[#E7E7E7]"></div>
+    <p class="text-[#6C737F]">Or Continue with</p>
+    <div class="border text-[#E7E7E7]"></div>
   </div>
 
-  <div class="center_border gap-3">
+  <div class="center_border">
     <img src="/images/Google.svg" alt="">
     <img src="/images/Twitter.svg" alt="">
     <img src="/images/Facebook.svg" alt="">
