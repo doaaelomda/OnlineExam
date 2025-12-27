@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
+import { AuthOnlineService } from '../../../core/services/auth-online-service';
 
 @Component({
   selector: 'app-quiz-history',
@@ -6,6 +7,19 @@ import { Component } from '@angular/core';
   templateUrl: './quiz-history.html',
   styleUrl: './quiz-history.scss',
 })
-export class QuizHistory {
+export class QuizHistory implements OnInit {
+  historyData:any
+  constructor(private AuthOnlineService:AuthOnlineService){}
+  ngOnInit(): void {
+    this.getHistory()
+  }
+
+  getHistory(){
+    debugger
+    this.AuthOnlineService.getHistory().subscribe((res:any)=>{
+      this.historyData=res
+      
+    })
+  }
 
 }

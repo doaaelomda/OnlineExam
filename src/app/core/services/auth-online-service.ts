@@ -36,5 +36,8 @@ export class AuthOnlineService {
   resetPassword(data:[]){
     return this.http.put(environment.apiUrl + '/auth/resetPassword' ,data)
   }
+  getHistory(){
+    return this.http.get(environment.apiUrl + '/questions/history')
+  }
 
 }

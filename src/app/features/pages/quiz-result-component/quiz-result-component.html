@@ -1,0 +1,29 @@
+<!-- quiz-result.component.html -->
+<div class="p-6 rounded-3xl" style="    transform: translate(10px, 42px);
+">
+  <h2 class="text-xl black_light font-semibold mb-4">Your score</h2>
+
+  <div class="flex items-center gap-6 mb-6">
+    <div class="score-circle ">
+      {{ score }}%
+          <svg class="progress-ring" viewBox="0 0 36 36">
+      <circle class="progress-ring__bg" cx="18" cy="18" r="16" />
+      <circle class="progress-ring__circle" cx="18" cy="18" r="16" 
+              [attr.stroke-dasharray]="circumference"
+              [attr.stroke-dashoffset]="circumference - (score / 100) * circumference" />
+    </svg>
+    </div>
+    <div class="flex flex-col gap-2">
+      <span class="text-blue_base font-medium text-2xl flex items-center">Correct:   <span class="circle-number">{{ correct }}</span></span>
+      <span class="text-blue_red font-medium text-2xl flex items-center">Incorrect:   <span class="circle-number">{{ incorrect }}</span></span>
+    </div>
+  </div>
+
+  <div class="flex gap-4">
+        <p-button class=" btn-back" label="Back"  styleClass="p-button-outlined p-button-rounded"
+      />
+
+    <p-button label="Show results" class="bg-blue text-white  btn-next"  iconPos="right" 
+      styleClass="p-button-rounded px-8" />
+  </div>
+</div>

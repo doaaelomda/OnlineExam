@@ -8,6 +8,7 @@ import { StartQuizDialogComponent } from '../../../shared/start-quiz-dialog/star
 import { QuizQuestionComponent } from '../../../shared/quiz-question/quiz-question';
 import { Quiz } from '../../../core/services/quiz';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+
 interface Exam {
   _id: string;
   title: string;
@@ -47,13 +48,13 @@ export class StartQuizComponent implements OnInit, OnDestroy {
   isTakingQuiz = false;
   currentIndex = 0;
   selectedAnswer: string | null = null;
-  answers: (string | null)[] = []; // store answers for all questions
+  answers: (string | null)[] = [];
   totalQuestions = 0;
 
   // Timer
-  timeRemainingInSeconds = 0;
-  timerDisplay = '00:00';
-  timerSubscription?: Subscription;
+  timeRemainingInSeconds!: number;
+  timerDisplay: string = '00:00';
+  private timerSubscription?: Subscription;
 
   // Dialog
   showDialog = false;
@@ -74,7 +75,7 @@ export class StartQuizComponent implements OnInit, OnDestroy {
     this.loading = true;
     this._quiz.getExams().subscribe({
       next: (res: any) => {
-        this.exams = res?.exams;
+        this.exams = res?.exams || [];
         this.loading = false;
       },
       error: () => {
@@ -92,13 +93,16 @@ export class StartQuizComponent implements OnInit, OnDestroy {
     this._quiz.getExamById(this.selectedExamId).subscribe({
       next: (res: any) => {
         const examData = res;
-        this.questions = examData?.questions?.map((q: any) => ({
-          text: q.question,
-          answers: q.answers.map((a: any) => ({
-            text: a.answer,
-          key: a.key,
-          })),
-        }));
+
+        // تجهيز الأسئلة
+        this.questions =
+          examData?.questions?.map((q: any) => ({
+            text: q.question,
+            answers: q.answers.map((a: any) => ({
+              text: a.answer,
+              key: a.key,
+            })),
+          })) || [];
 
         this.totalQuestions = this.questions.length;
         this.answers = new Array(this.totalQuestions).fill(null);
@@ -106,36 +110,53 @@ export class StartQuizComponent implements OnInit, OnDestroy {
         this.currentIndex = 0;
         this.selectedAnswer = null;
 
-        this.timeRemainingInSeconds = examData?.exam?.duration * 60;
+        // ضبط الوقت
+        const durationInMinutes = Number(examData?.questions[0]?.exam?.duration) || 30;
+        this.timeRemainingInSeconds = durationInMinutes * 60;
+
         this.updateTimerDisplay();
         this.startTimer();
+
         this.showQuizModal = true;
         this.showDialog = false;
+
+        this.isTakingQuiz = true;
+      },
+      error: (err) => {
+        console.error('Failed to load exam', err);
       },
     });
   }
 
   // Timer logic
-startTimer() {
-  if (this.timerSubscription) return;
-
+private startTimer() {
+  this.stopTimer();
   this.timerSubscription = interval(1000).subscribe(() => {
     if (this.timeRemainingInSeconds > 0) {
       this.timeRemainingInSeconds--;
       this.updateTimerDisplay();
     } else {
-      this.stopTimer();
       this.submitQuiz();
     }
   });
 }
 
 
-  stopTimer() {
+  private stopTimer() {
     this.timerSubscription?.unsubscribe();
+    this.timerSubscription = undefined;
   }
 
-  updateTimerDisplay() {
+  // داخل StartQuizComponent
+  trackByExam(index: number, exam: Exam) {
+    return exam._id;
+  }
+
+  private updateTimerDisplay() {
+    if (isNaN(this.timeRemainingInSeconds) || this.timeRemainingInSeconds < 0) {
+      this.timerDisplay = '00:00';
+      return;
+    }
     const minutes = Math.floor(this.timeRemainingInSeconds / 60);
     const seconds = this.timeRemainingInSeconds % 60;
     this.timerDisplay = `${minutes.toString().padStart(2, '0')}:${seconds
@@ -166,9 +187,6 @@ startTimer() {
   submitQuiz() {
     this.stopTimer();
     this.isTakingQuiz = false;
-  }
-
-  get currentQuestionAnswers() {
-    return this.questions[this.currentIndex]?.answers || [];
+    this.showQuizModal = false;
   }
 }

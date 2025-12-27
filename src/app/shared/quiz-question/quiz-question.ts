@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
+import { QuizResultComponent } from '../../features/pages/quiz-result-component/quiz-result-component';
 export interface QuizOption {
   text: string;
   key: string;
@@ -16,8 +17,10 @@ export interface QuizOption {
     // PrimeNG Modules
     CommonModule,
     ButtonModule,
-    DialogModule
+    DialogModule,
+    QuizResultComponent
   ],
+   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class QuizQuestionComponent {
   @Input() visible: boolean = false;
@@ -26,7 +29,7 @@ export class QuizQuestionComponent {
   @Input() options: any;
   @Input() currentQuestion: number = 1;
   @Input() totalQuestions: number = 20;
-  @Input() timeRemaining: any = '00:00'; 
+  @Input() timeRemaining: any ; 
   selectedOption: string | null = null;
 
   @Output() optionSelect = new EventEmitter<string>();
@@ -49,4 +52,8 @@ export class QuizQuestionComponent {
   // this.visible = false;
   this.visibleChange.emit(false);
 }
+isQuizFinished(): boolean {
+  return this.currentQuestion === this.totalQuestions;
+}
+
 }

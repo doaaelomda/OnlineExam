@@ -1,4 +1,5 @@
-<p-dialog [(visible)]="visible" modal="true"
+@if(!isQuizFinished()){
+  <p-dialog [(visible)]="visible" modal="true"
   contentStyleClass="max-w-3xl mx-auto p-6 bg-white rounded-2xl shadow-lg w-[686px]" [closable]="false">
   <!-- Header -->
   <div class="flex justify-between items-center mb-8">
@@ -58,6 +59,10 @@
       styleClass="p-button-rounded px-8" [disabled]="!selectedOption" />
   </div>
 </p-dialog>
+}
 
-
-<!-- <p-progressBar [value]="(currentQuestion / totalQuestions) * 100" [showValue]="false" class="mb-10" styleClass="h-2" ></p-progressBar> -->
+@if(isQuizFinished()){
+  <p-dialog class="score-dailog" [visible]="isQuizFinished()" modal="true">
+<app-quiz-result [incorrect]="2" [correct]="8"></app-quiz-result>
+</p-dialog>
+}
