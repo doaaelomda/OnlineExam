@@ -7,7 +7,7 @@ import { VerifyCode } from './verify-code/verify-code';
 import { SetPassword } from './set-password/set-password';
 import { HomePage } from '../pages/home-page/home-page';
 import { Dashboard } from '../pages/dashboard/dashboard';
-import { QuizHistory } from '../pages/quiz-history/quiz-history';
+import { accountSettings } from '../pages/quiz-history/quiz-history';
 import { StartQuizComponent } from '../pages/start-quiz/start-quiz';
 
 
@@ -30,7 +30,7 @@ export const routesLogin: Routes = [
     children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: Dashboard },
-      { path: 'quizHistory', component: QuizHistory },
+      { path: 'accountSettings', component: accountSettings },
       {path:'startQuiz' ,component:StartQuizComponent}
     ],
   },

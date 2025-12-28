@@ -7,15 +7,15 @@
             Dashboard
          </li>
 
-         <li [routerLink]="'quizHistory'" class="menu-item " [class.active]="activeItem === 'history'" (click)="activeItem = 'history'">
-            <i class="pi pi-history"></i>
-            Quiz History
+         <li [routerLink]="'accountSettings'" class="menu-item " [class.active]="activeItem === 'history'" (click)="activeItem = 'history'">
+            <i class="pi pi-user"></i>
+            Account Settings
          </li>
 
-         <li class="menu-item " [class.active]="activeItem === 'logout'" (click)="activeItem = 'logout'">
+         <!-- <li class="menu-item " [class.active]="activeItem === 'logout'" (click)="activeItem = 'logout'">
             <i class="pi pi-arrow-left"></i>
             <button (click)="logout()">Log Out</button>
-         </li>
+         </li> -->
       </ul>
 
    </div>

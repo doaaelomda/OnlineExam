@@ -1,8 +1,13 @@
-@if(historyData.length>0){
-    <p>{{historyData}}</p>
+@if (loading) {
+  <div class="flex justify-content-center align-items-center h-full">
+    <p-progressSpinner></p-progressSpinner>
+  </div>
+}
+@else if (historyData) {
+  <p>{{ historyData }}</p>
 }
 @else {
-    <p class="text-center m-auto"> 
-        No Data to View
-    </p>
+  <p class="text-center m-auto">
+    No Data to View
+  </p>
 }
