@@ -8,6 +8,9 @@
     overflow-y: hidden;
 }
 
+.menu-item.active-link {
+  background-color: #EFF6FF; /* لون الخلفية للزر النشط */
+}
 .warning_button  {
     width: 100%;
    background-color: #FEF2F2 !important;

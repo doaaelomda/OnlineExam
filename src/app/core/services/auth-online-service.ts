@@ -39,5 +39,11 @@ export class AuthOnlineService {
   getHistory(){
     return this.http.get(environment.apiUrl + '/questions/history')
   }
+  deleteAccount(){
+    return this.http.delete(environment.apiUrl + '/auth/deleteMe')
+  }
+ changePassword(data?:any){
+  return this.http.patch(environment.apiUrl + '/auth/changePassword',data)
+ }
 
 }

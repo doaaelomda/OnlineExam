@@ -17,3 +17,10 @@
    border-radius: 0 !important;
 }
 
+::ng-deep .p-dialog-header{
+    display: none;
+}
+
+::ng-deep .btn-next {
+    -webkit-border-radius: 0px;
+}

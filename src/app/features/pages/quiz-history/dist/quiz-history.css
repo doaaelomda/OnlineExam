@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .container-list {
   padding: 24px;
   background: white;
@@ -6,6 +7,10 @@
 
 :host {
   overflow-y: hidden;
+}
+
+.menu-item.active-link {
+  background-color: #EFF6FF; /* لون الخلفية للزر النشط */
 }
 
 .warning_button {

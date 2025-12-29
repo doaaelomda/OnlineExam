@@ -6,15 +6,24 @@
 
       <ul class="menu text-gray text-xl font-semibold flex flex-col gap-4 flex-1">
 
-        <button [routerLink]="'profile'" class="menu-item">
-          <i class="pi pi-users"></i>
-          Profile
-        </button>
+<button 
+  [routerLink]="'profile'" 
+  routerLinkActive="active-link" 
+  [routerLinkActiveOptions]="{ exact: true }"
+  class="menu-item">
+  <i class="pi pi-users"></i>
+  Profile
+</button>
 
-        <button [routerLink]="'changePassword'" class="menu-item">
-          <i class="pi pi-lock"></i>
-          Change Password
-        </button>
+<button 
+  [routerLink]="'changePassword'" 
+  routerLinkActive="active-link" 
+  [routerLinkActiveOptions]="{ exact: true }"
+  class="menu-item">
+  <i class="pi pi-lock"></i>
+  Change Password
+</button>
+
         <button
           (click)="logout()"
           class="warning_button menu-item mt-auto"

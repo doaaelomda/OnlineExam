@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { Navbar } from '../navbar/navbar';
-import { Router, RouterOutlet, RouterLink } from '@angular/router';
+import { Router, RouterOutlet, RouterLink, RouterModule } from '@angular/router';
 import { Sidebar } from '../sidebar/sidebar';
 import { AuthOnlineService } from '../../../core/services/auth-online-service';
 
 @Component({
   selector: 'app-quiz-history',
   standalone: true,
-  imports: [ProgressSpinnerModule, RouterOutlet, RouterLink],
+  imports: [ProgressSpinnerModule, RouterOutlet, RouterLink,RouterModule],
   templateUrl: './quiz-history.html',
   styleUrl: './quiz-history.scss',
 })
