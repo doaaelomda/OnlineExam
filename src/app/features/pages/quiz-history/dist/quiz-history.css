@@ -1,4 +1,21 @@
+.container-list {
+  padding: 24px;
+  background: white;
+  box-shadow: 0px 5px 100px 0px rgba(0, 0, 0, 0.1019607843);
+}
+
 :host {
-  display: flex;
-  justify-content: center;
+  overflow-y: hidden;
+}
+
+.warning_button {
+  width: 100%;
+  background-color: #FEF2F2 !important;
+  color: #DC2626 !important;
+  border-radius: 0 !important;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
 }

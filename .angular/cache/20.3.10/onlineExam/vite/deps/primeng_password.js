@@ -1,14 +1,10 @@
 import {
   TimesIcon
 } from "./chunk-ZCLVHGOA.js";
+import "./chunk-D272CXXL.js";
 import {
   BaseIcon
 } from "./chunk-LICKINTF.js";
-import "./chunk-D272CXXL.js";
-import {
-  InputText,
-  InputTextModule
-} from "./chunk-CZ7MKKB6.js";
 import {
   AutoFocus,
   AutoFocusModule
@@ -17,6 +13,10 @@ import {
   ConnectedOverlayScrollHandler,
   DomHandler
 } from "./chunk-3YMO6CU6.js";
+import {
+  InputText,
+  InputTextModule
+} from "./chunk-CZ7MKKB6.js";
 import {
   OverlayService,
   PrimeNGConfig,

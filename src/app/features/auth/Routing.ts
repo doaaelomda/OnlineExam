@@ -9,7 +9,8 @@ import { HomePage } from '../pages/home-page/home-page';
 import { Dashboard } from '../pages/dashboard/dashboard';
 import { accountSettings } from '../pages/quiz-history/quiz-history';
 import { StartQuizComponent } from '../pages/start-quiz/start-quiz';
-
+import { ProfileComponent } from '../pages/profile-component/profile-component';
+import { ChangePasswordComponent } from '../pages/change-password-component/change-password-component';
 
 export const routesLogin: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -30,9 +31,16 @@ export const routesLogin: Routes = [
     children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: Dashboard },
-      { path: 'accountSettings', component: accountSettings },
-      {path:'startQuiz' ,component:StartQuizComponent}
+       {path:'startQuiz' ,component:StartQuizComponent},
+      {
+        path: 'accountSettings',
+        component: accountSettings,
+        children: [
+          { path: '', redirectTo: 'profile', pathMatch: 'full' },
+          { path: 'profile', component: ProfileComponent },
+          { path: 'changePassword', component: ChangePasswordComponent },
+        ],
+      },
     ],
   },
-  
 ];

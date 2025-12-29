@@ -1,12 +1,12 @@
 import {
-  InputText,
-  InputTextModule
-} from "./chunk-CZ7MKKB6.js";
-import {
   AutoFocus,
   AutoFocusModule
 } from "./chunk-Z3VS7M3X.js";
 import "./chunk-3YMO6CU6.js";
+import {
+  InputText,
+  InputTextModule
+} from "./chunk-CZ7MKKB6.js";
 import {
   PrimeTemplate,
   SharedModule

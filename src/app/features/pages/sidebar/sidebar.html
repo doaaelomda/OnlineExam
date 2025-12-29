@@ -2,15 +2,26 @@
    <img src="images/Final.svg" alt="" class="mb-14">
    <div class="list">
       <ul class="menu text-gray text-xl font-semibold">
-         <li [routerLink]="'dashboard'" class="menu-item " [class.active]="activeItem === 'dashboard'" (click)="activeItem = 'dashboard'">
-            <i class="pi pi-align-justify"></i>
-            Dashboard
-         </li>
+         <li
+  [routerLink]="'dashboard'"
+  class="menu-item"
+  [class.active]="activeItem === 'dashboard'"
+  (click)="setActive('dashboard', 'Dashboard')"
+>
+  <i class="pi pi-align-justify"></i>
+  Dashboard
+</li>
 
-         <li [routerLink]="'accountSettings'" class="menu-item " [class.active]="activeItem === 'history'" (click)="activeItem = 'history'">
-            <i class="pi pi-user"></i>
-            Account Settings
-         </li>
+<li
+  [routerLink]="'accountSettings'"
+  class="menu-item"
+  [class.active]="activeItem === 'accountSettings'"
+  (click)="setActive('accountSettings', 'Account Settings')"
+>
+  <i class="pi pi-user"></i>
+  Account Settings
+</li>
+
 
          <!-- <li class="menu-item " [class.active]="activeItem === 'logout'" (click)="activeItem = 'logout'">
             <i class="pi pi-arrow-left"></i>

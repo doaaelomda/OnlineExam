@@ -1,38 +1,26 @@
-import { Component, OnInit } from '@angular/core';
-import { AuthOnlineService } from '../../../core/services/auth-online-service';
+import { Component } from '@angular/core';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { Navbar } from '../navbar/navbar';
+import { Router, RouterOutlet, RouterLink } from '@angular/router';
+import { Sidebar } from '../sidebar/sidebar';
+import { AuthOnlineService } from '../../../core/services/auth-online-service';
 
 @Component({
   selector: 'app-quiz-history',
   standalone: true,
-  imports: [ProgressSpinnerModule],
+  imports: [ProgressSpinnerModule, RouterOutlet, RouterLink],
   templateUrl: './quiz-history.html',
   styleUrl: './quiz-history.scss',
 })
-export class accountSettings implements OnInit {
+export class accountSettings  {
 
-  historyData: any = null;
-  loading: boolean = false;
-
-  constructor(private authOnlineService: AuthOnlineService) {}
-
-  ngOnInit(): void {
-    this.getHistory();
-  }
-
-  getHistory() {
-    this.loading = true;
-
-    this.authOnlineService.getHistory().subscribe({
-      next: (res: any) => {
-        this.historyData = res?.data;
-        this.loading = false;
-      },
-      error: (err) => {
-        console.error(err);
-        this.historyData = null;
-        this.loading = false;
+  constructor(private AuthOnlineService:AuthOnlineService,private router:Router ){}
+  logout(){
+    debugger
+    this.AuthOnlineService.logoutUser().subscribe((res:any)=>{
+      if(res){
+        this.router.navigate(['/login']);
       }
-    });
+    })
   }
 }

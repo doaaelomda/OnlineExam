@@ -3,6 +3,20 @@ import {
   TimesIcon
 } from "./chunk-RJCJDEPY.js";
 import "./chunk-YL6IVL5H.js";
+import "./chunk-ZSWKAGP2.js";
+import {
+  Ripple,
+  RippleModule
+} from "./chunk-6COPPSUL.js";
+import {
+  DomHandler
+} from "./chunk-477CUFCP.js";
+import {
+  PrimeNGConfig,
+  PrimeTemplate,
+  SharedModule,
+  zindexutils
+} from "./chunk-S5U7AIZP.js";
 import {
   animate,
   animation,
@@ -11,14 +25,6 @@ import {
   trigger,
   useAnimation
 } from "./chunk-3MTHALEB.js";
-import "./chunk-ZSWKAGP2.js";
-import {
-  Ripple,
-  RippleModule
-} from "./chunk-URDAG53U.js";
-import {
-  DomHandler
-} from "./chunk-477CUFCP.js";
 import {
   CommonModule,
   NgClass,
@@ -27,12 +33,6 @@ import {
   NgTemplateOutlet
 } from "./chunk-RAN24RGN.js";
 import "./chunk-E7QG5Y6X.js";
-import {
-  PrimeNGConfig,
-  PrimeTemplate,
-  SharedModule,
-  zindexutils
-} from "./chunk-S5U7AIZP.js";
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,

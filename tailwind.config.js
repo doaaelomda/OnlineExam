@@ -19,7 +19,9 @@ module.exports = {
       success:'#11CE19',
       black_white:'#1D1B201F',
       blue_base:'#02369C',
-      blue_red:'#CC1010'
+      blue_red:'#CC1010',
+      warning_color:'#FEF2F2',
+      red_600:'#DC2626'
     },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],

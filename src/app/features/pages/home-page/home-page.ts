@@ -5,10 +5,11 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
+  standalone: true, // ✅ الحل هنا
   imports: [Sidebar, Navbar, RouterOutlet],
   templateUrl: './home-page.html',
   styleUrl: './home-page.scss',
 })
 export class HomePage {
-
+  header_text: string = 'Dashboard';
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MenubarModule } from 'primeng/menubar';
 @Component({
   selector: 'app-navbar',
@@ -8,5 +8,7 @@ import { MenubarModule } from 'primeng/menubar';
   styleUrl: './navbar.scss',
 })
 export class Navbar {
+
+  @Input() header_text:any
 
 }

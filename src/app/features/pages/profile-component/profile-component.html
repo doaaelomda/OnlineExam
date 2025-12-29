@@ -1,0 +1,59 @@
+<div class="container-list min-h-screen ">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="grid grid-cols-2 gap-4 my-2">
+
+        <div class="col-span-1">
+            <label>First Name</label>
+            <app-input-text [inputLabel]="'First Name'" [controlNameInput]="'firstName'" [placeholder]="'First Name'"
+                [control]="form.get('firstName')!" [Validation]="ValidationRequired">
+            </app-input-text>
+        </div>
+        <div class="col-span-1">
+            <label>Last Name</label>
+            <app-input-text [inputLabel]="'Last Name'" [controlNameInput]="'lastName'" [placeholder]="'Last Name'"
+                [control]="form.get('lastName')!" [Validation]="ValidationRequired">
+            </app-input-text>
+        </div>
+
+
+        <label>UserName</label>
+        <app-input-text [inputLabel]="'User Name'" [controlNameInput]="'username'" [placeholder]="'UserName'"
+            [control]="form.get('username')!" [Validation]="ValidationRequired" class="col-span-2">
+        </app-input-text>
+
+        <label>Email</label>
+        <app-input-text [inputLabel]="'Email'" [controlNameInput]="'Email'" [placeholder]="'Email'"
+            [control]="form.get('Email')!" [Validation]="ValidationRequired" class="col-span-2">
+        </app-input-text>
+
+
+        <label>Phone</label>
+        <app-phone-number-input [control]="form.get('phone')" [placeholder]="'Please enter phone'"
+            [defaultCountry]="'LK'" class="col-span-2">
+        </app-phone-number-input>
+
+
+    </form>
+
+
+    <div class="flex justify-between gap-10 my-5">
+        <app-button (click)="deleteAccount()" class="w-1/2 warning_button" [title]="'Delete My Account'"></app-button>
+        <app-button class="w-1/2" (click)="onSubmit()" [title]="'Save Changes'"></app-button>
+    </div>
+</div>
+
+
+
+  <p-dialog [(visible)]="visible" modal="true"
+  contentStyleClass="max-w-3xl mx-auto p-6 bg-white rounded-2xl shadow-lg w-[686px]" [closable]="false">
+
+  <!-- Question -->
+  <h2 class="text-2xl font-semibold text-black_light mb-6 leading-relaxed">
+    
+  </h2>
+  <!-- Navigation -->
+  <div class="flex justify-between gap-12">
+    <p-button class=" btn-back" label="Back"  styleClass="p-button-outlined p-button-rounded"/>
+
+    <p-button label="Next" class="bg-black_white text-black btn-next" />
+  </div>
+</p-dialog>

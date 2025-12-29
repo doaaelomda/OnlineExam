@@ -93,8 +93,6 @@ export class StartQuizComponent implements OnInit, OnDestroy {
     this._quiz.getExamById(this.selectedExamId).subscribe({
       next: (res: any) => {
         const examData = res;
-
-        // تجهيز الأسئلة
         this.questions =
           examData?.questions?.map((q: any) => ({
             text: q.question,
@@ -109,8 +107,6 @@ export class StartQuizComponent implements OnInit, OnDestroy {
 
         this.currentIndex = 0;
         this.selectedAnswer = null;
-
-        // ضبط الوقت
         const durationInMinutes = Number(examData?.questions[0]?.exam?.duration) || 30;
         this.timeRemainingInSeconds = durationInMinutes * 60;
 
@@ -146,8 +142,6 @@ private startTimer() {
     this.timerSubscription?.unsubscribe();
     this.timerSubscription = undefined;
   }
-
-  // داخل StartQuizComponent
   trackByExam(index: number, exam: Exam) {
     return exam._id;
   }

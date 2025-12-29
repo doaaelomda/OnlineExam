@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { SidebarModule } from 'primeng/sidebar';
 import { ButtonModule } from 'primeng/button';
 import { Router, RouterLink } from '@angular/router';
@@ -11,15 +11,12 @@ import { AuthOnlineService } from '../../../core/services/auth-online-service';
   styleUrl: './sidebar.scss',
 })
 export class Sidebar {
+    @Output() changeHeader = new EventEmitter<string>();
+
   activeItem = 'dashboard';
 
-  constructor(private AuthOnlineService:AuthOnlineService,private router:Router ){}
-  logout(){
-    debugger
-    this.AuthOnlineService.logoutUser().subscribe((res:any)=>{
-      if(res){
-        this.router.navigate(['/login']);
-      }
-    })
+  setActive(item: string, headerText: string) {
+    this.activeItem = item;
+    this.changeHeader.emit(headerText);
   }
 }
