@@ -1,59 +1,83 @@
 # OnlineExam
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.1.
+## 📌 Overview
+This repository contains the **OnlineExam project**, a web application built using **Angular**.  
+This project was created as part of **Elevate training / coursework** to practice building modern front-end applications.
 
-## Development server
+---
 
-To start a local development server, run:
+## 📁 Project Details
+This Angular project was generated using **Angular CLI** and includes source code, configuration, and assets needed to develop and run the exam web application.  
+It includes features such as component scaffolding, routing, and build configuration.
 
+---
+
+## 🚀 Features
+- Developed using **Angular**
+- Modular project structure
+- Supports development and production builds
+- Includes client-side code for the exam application
+
+---
+
+## 📥 Prerequisites
+Before running the project, make sure you have:
+
+- **Node.js** installed
+- **Angular CLI** installed globally
+
+You can install Angular CLI with:
 ```bash
+How to Run Locally
+
+Clone the repository
+
+git clone https://github.com/doaaelomda/OnlineExam.git
+
+
+Install dependencies
+
+cd OnlineExam
+npm install
+
+
+Start the development server
+
 ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
+Open your browser
+Navigate to:
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+http://localhost:4200/
 
-```bash
-ng generate component component-name
-```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+The app will live-reload when you modify any source files.
 
-```bash
-ng generate --help
-```
+🚧 Build for Production
 
-## Building
+To build the project for production:
 
-To build the project run:
-
-```bash
 ng build
-```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
-## Running unit tests
+The build artifacts will be stored in the dist/ directory.
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+🛠️ Development Tools
 
-```bash
-ng test
-```
+Angular CLI
 
-## Running end-to-end tests
+Node.js / npm
 
-For end-to-end (e2e) testing, run:
+VS Code or any code editor of your choice
 
-```bash
-ng e2e
-```
+📄 License
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+This project is free to use and modify.
+If needed, you can add a license such as MIT by adding a LICENSE file.
 
-## Additional Resources
+📬 Contact
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+If you need help or want to improve the project, feel free to open an issue or submit a pull request.
+npm install -g @angular/cli
+
